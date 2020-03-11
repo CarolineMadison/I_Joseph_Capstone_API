@@ -1,0 +1,5 @@
+IJosephENV/
+db.sqlite3
+__pycache__/
+.vscode/
+migrations/
