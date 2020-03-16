@@ -1,0 +1,14 @@
+<h2>Register</h2>
+<form method="post">
+    {% csrf_token %}
+<!--     These values will be saved as part of a new User instance -->
+    <input type="text" placeholder="username" name="username">
+    <input type="text" placeholder="password" name="password">
+    <input type="email" placeholder="email" name="email">
+    <input type="text" placeholder="first name" name="first_name">
+    <input type="text" placeholder="last name" name="last_name">
+<!--     This value will be saved on the new Librarian instance -->
+    {% comment %} <input type="text" placeholder="favorite color" name="fave_color"> {% endcomment %}
+  
+    <button type="submit">Login</button>
+</form>
