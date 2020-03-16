@@ -35,6 +35,6 @@ def register_user(request):
 
     # handles a request to load the empty form for the useer to fill out
     else:
-        template = 'auth/register.html'
+        template = 'registration/register.html'
 
     return render(request, template, {})

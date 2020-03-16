@@ -4,9 +4,9 @@ from ijosephapp.models import Job
 from ..connection import Connection
 from ijosephapp.models import JobCategory
 from ijosephapp.models import model_factory
-# from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 
-# @login_required
+@login_required
 def job_list(request):
     if request.method == 'GET':
         with sqlite3.connect(Connection.db_path) as conn:
@@ -63,4 +63,4 @@ def job_list(request):
             form_data['description'], form_data['isCompleted'],
             request.user.id, form_data["category"]))
 
-        return redirect(reverse('ijosephapp:jobs'))
+        return redirect(reverse('ijosephapp:home'))
