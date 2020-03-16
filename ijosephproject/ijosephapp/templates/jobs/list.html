@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Jobs</title>
+  </head>
+  <body>
+    {% comment %} <h1>Books</h1> {% endcomment %}
+
+    <ol>
+    {% for job in all_jobs %}
+        <li>
+            {{ job.title }}
+            {% comment %} by {{book.author}}
+            published in {{book.year_published}} {% endcomment %}
+        </li>
+    {% endfor %}
+    </ol>
+  </body>
+</html>
+
+{% comment %} Template language rule #1: When you want to write logical code in a Django template like for loops, or if statements, you need to wrap the code in {% %}.
+
+Template language rule #2: When you want to display the value of variables, you wrap the variable name in {{ }}.
+
+Here's another example that shows both the for loop, but with an nested if statement to show you the use of the interpolation punctuation. {% endcomment %}
+
+{% comment %} {% for book in all_books %}
+    {% if book.year_published > 2000 %}
+        <li>{{ book.title }} by {{book.author}} published in {{book.year_published}}</li>
+    {% endif %}
+{% endfor %} {% endcomment %}
