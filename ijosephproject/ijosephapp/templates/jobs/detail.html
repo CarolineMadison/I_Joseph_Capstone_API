@@ -1,0 +1,34 @@
+  
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>iJoseph</title>
+</head>
+
+<body>
+
+    <section id="job-details">
+        <h1>{{ job.title }}</h1>
+        <h2>{{ job.category }}</h2>
+        <h2>{{ job.location }}</h2>
+        <h2>{{ job.description }}</h2>
+    </section>
+
+    <section id="job-actions" style="display:flex;">
+        <form action="{% url 'ijosephapp:job' job.id %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="actual_method" value="DELETE">
+            <button>Delete</button>
+        </form>
+{% comment %} 
+        <form action="{% url 'ijosephapp:job_edit_form' book.id %}" method="GET">
+            {% csrf_token %}
+            <button>Edit</button>
+        </form>
+    </section> {% endcomment %}
+
+</body>
+
+</html>
