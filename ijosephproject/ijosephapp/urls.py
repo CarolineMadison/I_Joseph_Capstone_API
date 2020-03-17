@@ -11,4 +11,5 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('register/', register_user, name="register"),
     path('logout/', logout_user, name='logout'),
+    path('jobs/form/', job_form, name='job_form'),
 ]

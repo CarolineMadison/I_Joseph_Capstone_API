@@ -8,7 +8,7 @@ class Job(models.Model):
     category = models.ForeignKey(JobCategory, on_delete=models.DO_NOTHING)
     location = models.CharField(max_length=20)
     description = models.CharField(max_length=255)
-    isCompleted = models.BooleanField(default=False)
+    isCompleted = models.BooleanField()
     createdAt = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
