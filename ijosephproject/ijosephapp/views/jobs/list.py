@@ -9,58 +9,30 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def job_list(request):
     if request.method == 'GET':
-        with sqlite3.connect(Connection.db_path) as conn:
-            
-            conn.row_factory =  model_factory(Job)
-            db_cursor = conn.cursor()
-
-            db_cursor.execute("""
-            select
-                j.id,
-                j.title,
-                j.location,
-                j.description,
-                j.isCompleted,
-                j.createdAt,
-                j.category_id,
-                j.user_id
-            from ijosephapp_job j
-            """)
-
-            # When you instruct the sqlite3 package to fetchall(), it takes your SQL string and walks over to the database and executes it. It then takes all of the rows that the database generates, and creates a tuple out of each one. It then puts all of those tuples into a list. (Chapter Documentation, NSS)
-            # TUPLE is a collection which is ordered and unchangeable. Allows duplicate members. Parenthesis. (W3 Schools)
-
-            # LIST is a collection which is ordered and changeable. Allows duplicate members. Brackets. (W3 Schools)
-            all_jobs = db_cursor.fetchall()
-
-        # When a view wants to generate some HTML representations of data, it needs to specify a template to use. [Below], the template variable is holding the path and filename of the template. (Nashville Software School, Ch 3 Documentation)
+        
+        all_jobs = Job.objects.all()
 
         template = 'jobs/list.html'
-
-        # the dictionary 'all_books' has a single property labeled all_books and its value is the list of book objects that the view generates. // The key name is able to be used in a loop in the template.  (Nashville Software School, Ch 3 Documentation)
 
         context = {
             'all_jobs': all_jobs
         }
-        # Then the render() method is invoked. That method takes the HTTP request as the first argument, the template to be used as the second argument, and then a dictionary containing the data to be used in the template. (Nashville Software School, Ch 3 Documentation)
+       
         return render(request, template, context)
     
     elif request.method == 'POST':
         form_data = request.POST
+        isCompleted = form_data.get("isCompleted", False)
+       
+        new_job = Job(
+            title = form_data['title'],
+            category_id = form_data['category'],
+            location = form_data['location'],
+            description = form_data['description'],
+            isCompleted = isCompleted,
+            user_id = request.user.id
+        )
 
-        with sqlite3.connect(Connection.db_path) as conn:
-            db_cursor = conn.cursor()
+        new_job.save()
 
-            db_cursor.execute("""
-            INSERT INTO ijosephapp_job
-            (
-                title, location, description,
-                isCompleted, createdAt, category_id, user_id
-            )
-            VALUES (?, ?, ?, ?, ?, ?, ?)
-            """,
-            (form_data['title'], form_data['location'],
-            form_data['description'], form_data['isCompleted'],
-            request.user.id, form_data["category"]))
-
-        return redirect(reverse('ijosephapp:home'))
+        return redirect(reverse('ijosephapp:jobs'))
