@@ -6,7 +6,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Jobs</title>
+    <title>iJoseph</title>
   </head>
   <body>
     {% comment %} <h1>Books</h1> {% endcomment %}
@@ -14,9 +14,7 @@
     <ol>
     {% for job in all_jobs %}
         <li>
-            {{ job.title }}
-            {% comment %} by {{book.author}}
-            published in {{book.year_published}} {% endcomment %}
+            <a href="{% url 'ijosephapp:job' job.id %}"> {{ job.title }} </a>
         </li>
     {% endfor %}
     </ol>
@@ -36,3 +34,8 @@ Here's another example that shows both the for loop, but with an nested if state
         <li>{{ book.title }} by {{book.author}} published in {{book.year_published}}</li>
     {% endif %}
 {% endfor %} {% endcomment %}
+
+{% comment %} <li>
+    <a href="{% url 'libraryapp:book' book.id %}"> {{ book.title }} </a>
+    by {{book.author}} published in {{book.year_published}}
+</li> {% endcomment %}
