@@ -6,27 +6,21 @@
     <meta charset="utf-8">
     <title>iJoseph</title>
 
-    <style>
-        .navList {
-            list-style-type: none;
-            display: flex;
-            border: 1px solid lightgray;
-            padding: 1em;
-        }
+    <link rel="stylesheet" href="{% static 'styles/base.css' %}" />
 
-        .navList__route {
-            margin: 0 0.5em;
-        }
-    </style>
+    {% block css %}
+    {% endblock %}
+
 </head>
 
 <body>
 
     <nav id="site-nav">
         <ol class="navList">
-            <li class="navList__route"><a href="{% url 'ijosephapp:jobs' %}">Jobs</a></li>
+            <a href="{% url 'ijosephapp:home' %}"><img id="logo"src="{% static 'images/ijosephlogo.png' %}" alt="iJoseph Logo"></a>
             <li class="navList__route"><a href="{% url 'ijosephapp:register' %}">Register</a></li>
             <li class="navList__route"><a href="{% url 'ijosephapp:login' %}">Login</a></li>
+            <li class="navList__route"><a href="{% url 'ijosephapp:jobs' %}">Jobs</a></li>
             <li class="navList__route"><a href="{% url 'ijosephapp:logout' %}">Log Out</a></li>
         </ol>
     </nav>
