@@ -1,19 +1,36 @@
 {% extends 'shared/base.html' %}
 {% block content %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <title>iJoseph</title>
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    
+    {% block css %}
+    {% endblock %}
 </head>
 
 <body>
+    <div class="home">
+        <a href="{% url 'ijosephapp:job_form' %}" id="logoHome"><img src="{% static 'images/ijosephlogo.png' %}" alt="iJoseph Logo"></a>
 
-    <h1>Welcome to I, Joseph!</h1>
-    <h2>A Community of Helpers<h/2>
 
+        {% comment %} <img href="{% url 'ijosephapp:home'%}" src="{% static 'images/ijosephlogo.png' %}" alt="iJoseph Logo"> {% endcomment %}
+        <h1>A Community of Helpers<h/1></br></br>
+        <a id="homeBTN" href="{% url 'ijosephapp:jobs' %}">Become a Helper</a></br></br>
+        <a id="homeBTN" href="{% url 'ijosephapp:job_form' %}">Ask for Help</a>
+    </div>
 </body>
 
 </html>
- {% endblock %}
+{% endblock %}
+
+{% comment %} <a href="https://www.qries.com/">
+         <img alt="Qries" src="https://www.qries.com/images/banner_logo.png"
+         width=150" height="70">
+      </a> {% endcomment %}
+

@@ -1,5 +1,5 @@
 import sqlite3
-from django.shortcuts import render
+from django.shortcuts import render, reverse
 from django.contrib.auth.decorators import login_required
 from ijosephapp.models import Job
 from ijosephapp.models import JobCategory

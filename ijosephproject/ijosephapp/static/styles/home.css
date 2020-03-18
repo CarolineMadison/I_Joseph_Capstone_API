@@ -1,0 +1,27 @@
+.home {
+    background-color: white;
+    padding-top: 300px;
+    padding-bottom: 50px;
+    text-align: center;
+    margin: 0;
+    font-size: 1.5em;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* #logoHome {
+    max-width: 75%;
+} */
+
+#homeBTN {
+    font-size: .8em;
+    font-family: 'Raleway', sans-serif;
+    border: lightgrey solid 5px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: .3em;
+}
+
+#homeBTN:hover {
+    color: red;
+}
