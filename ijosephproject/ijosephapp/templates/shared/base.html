@@ -7,6 +7,7 @@
     <title>iJoseph</title>
 
     <link rel="stylesheet" href="{% static 'styles/base.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
     {% block css %}
     {% endblock %}
@@ -20,7 +21,6 @@
             <a href="{% url 'ijosephapp:home' %}"><img id="logo"src="{% static 'images/ijosephlogo.png' %}" alt="iJoseph Logo"></a>
             <li class="navList__route"><a href="{% url 'ijosephapp:register' %}">Register</a></li>
             <li class="navList__route"><a href="{% url 'ijosephapp:login' %}">Login</a></li>
-            <li class="navList__route"><a href="{% url 'ijosephapp:jobs' %}">Jobs</a></li>
             <li class="navList__route"><a href="{% url 'ijosephapp:logout' %}">Log Out</a></li>
         </ol>
     </nav>

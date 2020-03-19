@@ -1,5 +1,4 @@
 {% extends 'shared/base.html' %}
-
 {% block content %}
 {% load static %}
 <!DOCTYPE html>
@@ -7,14 +6,18 @@
   <head>
     <meta charset="utf-8">
     <title>iJoseph</title>
+    {% block css %}
+      <link rel="stylesheet" href="{% static 'styles/joblist.css' %}" />
+    {% endblock %}
   </head>
   <body>
-    {% comment %} <h1>Books</h1> {% endcomment %}
-
-    <ol>
+    <ol class="jobs">
+    {% comment %} NEED ONLY JOBS THAT AREN'T IN USERJOB TABLE TO SHOW HERE {% endcomment %}
+    {% comment %} NEED ONLY JOBS WITH isComplete === False to show here {% endcomment %}
     {% for job in all_jobs %}
-        <li>
-            <a href="{% url 'ijosephapp:job' job.id %}"> {{ job.title }} </a>
+        <li class="job">
+          <h2> {{ job.title }} </h2>
+            <a id="detailsBTN" href="{% url 'ijosephapp:job' job.id %}">More Information</a>
         </li>
     {% endfor %}
     </ol>
@@ -22,6 +25,7 @@
 </html>
 
 {% endblock %}
+
 
 {% comment %} Template language rule #1: When you want to write logical code in a Django template like for loops, or if statements, you need to wrap the code in {% %}.
 
