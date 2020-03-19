@@ -4,3 +4,4 @@ from .auth.register import register_user
 from .auth.logout import logout_user
 from .jobs.form import job_form
 from .jobs.detail import job_details
+from .userjob.list import userjob_list

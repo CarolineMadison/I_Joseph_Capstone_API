@@ -9,3 +9,5 @@ class UserJob(models.Model):
 
     class Meta:
         ordering = ("job",)
+
+        # NEED TO MAKE SURE THAT WHEN I DESELECT A USERJOB IT DELETES IT FROM THIS TABLE WITHOUT DELETING IT FROM JOB TABLE OR DELETING THE USER

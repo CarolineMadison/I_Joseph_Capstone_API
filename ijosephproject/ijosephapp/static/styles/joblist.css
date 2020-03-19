@@ -1,0 +1,53 @@
+.jobs {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.job {
+    flex-basis: 20%;
+    padding: 0 2em 0.5em 2em;
+    border: 1px solid gray;
+    margin: 1em;
+    padding: 1.5em;
+    font-size: 1.5em;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+/* .book__title {
+    font-size: 1.1em;
+}
+
+.book__description {
+    font-size: 0.75em;
+} */
+
+/* .job {
+    background-color: white;
+    padding-top: 300px;
+    padding-bottom: 50px;
+    text-align: center;
+    margin: 0;
+    font-size: 1.5em;
+    font-family: 'Raleway', sans-serif;
+} */
+
+/* #logoHome {
+    max-width: 75%;
+} */
+
+#detailsBTN {
+    font-size: .8em;
+    font-family: 'Raleway', sans-serif;
+    border: lightgrey solid 5px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: .3em;
+}
+
+a:hover {
+    color: red;
+}

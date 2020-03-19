@@ -1,3 +1,5 @@
+{% extends 'shared/base.html' %}
+{% block content %}
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -34,7 +36,8 @@
 
           {% comment %} <input value="False" name="isCompleted" type="hidden"> {% endcomment %}
           
-       <input type="submit" value="Create" />
+       <button type="submit" value="Submit"/>Submit</button>
     </form>
   </body>
 </html>
+{% endblock %}
