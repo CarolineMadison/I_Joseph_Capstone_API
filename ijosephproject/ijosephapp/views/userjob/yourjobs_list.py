@@ -11,13 +11,11 @@ def yourjobs_list(request):
         
         user = request.user.id
 
-        # GET ALL USER JOBS FILTERED BY LOGGED IN USER
-        
+        # Get all jobs user has checked out 
         yourjobs = UserJob.objects.filter(user_id=user)
+
+        # Get all jobs user has submitted
         yoursubmittedjobs = Job.objects.filter(user=user)
-        
-        #all_jobs = Job.objects.all()
-        #print('debug me: ' + str(all_jobs.count()))
         
         #Init new array to hold jobs the user has checked out
         checkedout_jobs = []
@@ -30,17 +28,8 @@ def yourjobs_list(request):
             #The .first() is required to return the actual object not a queryset 
             tempObject = Job.objects.filter(id=tempId).first()
             print('debug me: ' + tempObject.title)
-            # if checkedout_jobs.count == 0:
-            #     checkedofut_jobs = tempObject
-            # else:
+        
             checkedout_jobs.append(tempObject)
-
-                
-    
-	
-# from ijosephapp_job
-# Left join ijosephapp_userjob ON ijosephapp_job.id = ijosephapp_userjob.id
-# WHERE ijosephapp_userjob.user_id = 2;
 
         template = 'userjob/yourjobs_list.html'
 
@@ -51,16 +40,14 @@ def yourjobs_list(request):
         }
        
         return render(request, template, context)
-
-        # filter by user id in the html
     
     elif request.method == 'POST':
         form_data = request.POST
-        
+
         print(form_data)
 
         if form_data["actionType"] == "SelectOpportunity":
-    #    this will come from the hidden input fields on detail.html
+   
             new_userjob = UserJob(
                 job_id = form_data["job_id"],
                 user_id = request.user.id
@@ -72,14 +59,6 @@ def yourjobs_list(request):
 
         elif form_data["actionType"] == "MarkComplete":
             job_id = form_data["job_id"]
-            Job.objects.filter(id=job_id).update(isCompleted=True)
-            # print(jobtomarkcomplete.isComplete)
-            # jobtomarkcomplete.isComplete = True
-
-            # jobtomarkcomplete.(id=job_id)
-
-            
-
-            # print("this is marked complete " + str(job_id) + " " + jobtomarkcomplete.title) 
+            Job.objects.filter(id=job_id).update(isCompleted=True) 
 
     return redirect(reverse('ijosephapp:yourjob'))
