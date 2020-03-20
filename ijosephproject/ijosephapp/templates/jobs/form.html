@@ -6,8 +6,13 @@
   <head>
     <meta charset="utf-8">
     <title>iJoseph</title>
+    {% comment %} <link rel="stylesheet" href="{% static 'styles/applyforhelpform.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    {% block css %}
+    {% endblock %} {% endcomment %}
   </head>
   <body>
+    <div>
     <h1>Apply for Help</h1>
 
 
@@ -15,7 +20,7 @@
       {% csrf_token %}
       <fieldset>
           <label for="title">Title: </label>
-          <input id="title" type="text" name="title">
+          <input id="title" type="text" name="title" autofocus>
       </fieldset>
       <fieldset>
           <label for="location">Location: </label>
@@ -36,8 +41,9 @@
 
           {% comment %} <input value="False" name="isCompleted" type="hidden"> {% endcomment %}
           
-       <button type="submit" value="Submit"/>Submit</button>
+       <button type="submit" value="Submit">Submit</button>
     </form>
+    </div>
   </body>
 </html>
 {% endblock %}
