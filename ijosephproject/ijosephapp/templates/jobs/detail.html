@@ -15,13 +15,12 @@
         <h2>{{ job.location }}</h2>
         <h2>{{ job.description }}</h2>
     </section>
-<form action="{% url 'ijosephapp:userjob' %}" method="post">
+<form action="{% url 'ijosephapp:yourjob' %}" method="post">
       {% csrf_token %}
-        {% comment %} put in hidden input fields form for creating a job put data i need here one for user id and one for job id {% endcomment %}
-        {% comment %} job.id {% endcomment %}
         <input value={{ job.id }} name="job_id" type="hidden">
-        <button type="submit" value="Submit"/>Select This Opportunity</button>
-    </section>
+        <input value="SelectOpportunity" name="actionType" type="hidden">
+        <button type="submit" value="SelectOpportunity">Select This Opportunity</button>
+   
 </form>
 
 </body>

@@ -12,12 +12,10 @@
   </head>
   <body>
     <ol class="jobs">
-    {% comment %} NEED ONLY JOBS THAT AREN'T IN USERJOB TABLE TO SHOW HERE {% endcomment %}
-    {% comment %} NEED ONLY JOBS WITH isComplete === False to show here {% endcomment %}
-    {% for job in all_jobs %}
+    {% for job in notcheckedout_jobs %}
         <li class="job">
           <h2> {{ job.title }} </h2>
-            <a id="detailsBTN" href="{% url 'ijosephapp:job' job.id %}">More Information</a>
+            <a id="detailsBTN" href="{% url 'ijosephapp:job' job.id %}">Details</a>
         </li>
     {% endfor %}
     </ol>
@@ -25,21 +23,3 @@
 </html>
 
 {% endblock %}
-
-
-{% comment %} Template language rule #1: When you want to write logical code in a Django template like for loops, or if statements, you need to wrap the code in {% %}.
-
-Template language rule #2: When you want to display the value of variables, you wrap the variable name in {{ }}.
-
-Here's another example that shows both the for loop, but with an nested if statement to show you the use of the interpolation punctuation. {% endcomment %}
-
-{% comment %} {% for book in all_books %}
-    {% if book.year_published > 2000 %}
-        <li>{{ book.title }} by {{book.author}} published in {{book.year_published}}</li>
-    {% endif %}
-{% endfor %} {% endcomment %}
-
-{% comment %} <li>
-    <a href="{% url 'libraryapp:book' book.id %}"> {{ book.title }} </a>
-    by {{book.author}} published in {{book.year_published}}
-</li> {% endcomment %}
