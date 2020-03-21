@@ -63,12 +63,13 @@
           <b1> This job is completed. </b1>
       {% endif %}
         </li>
-{% comment %} 
-        <form action="{% url 'ijosephapp:userjob' %}" method="POST">
+
+        <form action="{% url 'ijosephapp:yourjob' %}" method="POST">
             {% csrf_token %}
-            <input type="hidden" name="actual_method" value="DELETE">
-            <button>Delete</button>
-        </form> {% endcomment %}
+            <input value={{ submittedjob.id }} name="other_job_id" type="hidden">
+            <input type="hidden" name="actionType" value="Delete">
+              <button value="delete" type="submit">Delete</button>
+        </form> 
 
         {% comment %} <form action="{% url 'libraryapp:book_edit_form' book.id %}" method="GET">
             {% csrf_token %}

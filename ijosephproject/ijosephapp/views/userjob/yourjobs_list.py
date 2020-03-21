@@ -5,9 +5,9 @@ from ijosephapp.models import UserJob
 from ..connection import Connection
 from django.contrib.auth.decorators import login_required
 
+# this renders the page
 @login_required
 def yourjobs_list(request):
-    # this renders the page
     if request.method == 'GET':
         
         # gets the id of the logged in user
@@ -71,6 +71,7 @@ def yourjobs_list(request):
 
         # For deleting a single userjob relationship
         elif form_data["actionType"] == "Deselect":
+            # grabs the value for the keyname other_job_id from the form data
             other_job_id = form_data["other_job_id"]
             tempCount = UserJob.objects.filter(job=other_job_id).count()
 
@@ -78,6 +79,14 @@ def yourjobs_list(request):
             UserJob.objects.filter(job=other_job_id).delete()
 
             print("this is the deselect for userjob relationship " + str(other_job_id) + " count: " + str(tempCount))
+
+        # For deleting a job from the job table
+        elif form_data["actionType"] == "Delete":
+            # grabs the value for the keyname other_job_id from the form data
+            other_job_id = form_data["other_job_id"]
+            Job.objects.filter(id=other_job_id).delete()
+
+            print("this is the delete button for job id " + other_job_id)
 
     return redirect(reverse('ijosephapp:yourjob'))
 
