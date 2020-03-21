@@ -56,9 +56,36 @@ def yourjobs_list(request):
 
             new_userjob.save()
 
-
+        # 
         elif form_data["actionType"] == "MarkComplete":
             job_id = form_data["job_id"]
             Job.objects.filter(id=job_id).update(isCompleted=True) 
 
+        # For deleting a single userjob relationship
+        elif form_data["actionType"] == "Deselect":
+            other_job_id = form_data["other_job_id"]
+            tempCount = UserJob.objects.filter(job=other_job_id).count()
+
+            # this filters the userjob table, finds all records in the database where job_id === job.id
+            UserJob.objects.filter(job=other_job_id).delete()
+
+            print("this is the deselect for userjob relationship " + str(other_job_id) + " count: " + str(tempCount))
+
     return redirect(reverse('ijosephapp:yourjob'))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

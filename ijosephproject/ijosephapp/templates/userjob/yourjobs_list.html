@@ -15,26 +15,26 @@
     <h1>YOUR JOBS TO COMPLETE</h1>
 
     <ol class="jobs">
-    {% comment %} {% for yourjob in yourjobs %}  {% endcomment %}
     {%for selectedjob in checkedout_jobs%}
       {% if selectedjob.isCompleted == False %}
         <li>
           <h2> {{ selectedjob.title}} </h2>
           <b1> {{ selectedjob.description}}<b1>
         </li>
-      <form action="{% url 'ijosephapp:yourjob' %}" method="delete">
-        {% csrf_token %}
-          <input value="deselect" name="actionType" type="hidden">
-            <button value="deselect">DESELECT</button>
-      </form>
 
-      <form action="{% url 'ijosephapp:yourjob' %}" method="post">
+      <form action="{% url 'ijosephapp:yourjob' %}" method="POST">
         {% csrf_token %}
           <input value={{ selectedjob.id }} name="job_id" type="hidden">
           <input value="MarkComplete" name="actionType" type="hidden">
             <button value="MarkComplete" type="submit">MARK COMPLETE</button>
       </form>
 
+      <form action="{% url 'ijosephapp:yourjob' %}" method="POST">
+        {% csrf_token %}
+          <input value={{ selectedjob.id }} name="other_job_id" type="hidden">
+          <input value="Deselect" name="actionType" type="hidden">
+            <button value="Deselect" type="submit">DESELECT</button>
+      </form>
       {% endif %}
     {% endfor %}
     </ol>
@@ -54,8 +54,20 @@
           <b1> This job is completed. </b1>
       {% endif %}
         </li>
+{% comment %} 
+        <form action="{% url 'ijosephapp:userjob' %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="actual_method" value="DELETE">
+            <button>Delete</button>
+        </form> {% endcomment %}
+
+        {% comment %} <form action="{% url 'libraryapp:book_edit_form' book.id %}" method="GET">
+            {% csrf_token %}
+            <button>Edit</button>
+        </form> {% endcomment %}
+
         <button>Edit</button>
-        <button>Delete</button>
+
     {% endfor %}
     </ol>
 
