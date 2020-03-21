@@ -5,10 +5,12 @@ from ijosephapp.models import UserJob
 from ..connection import Connection
 from django.contrib.auth.decorators import login_required
 
+# this renders the page
 @login_required
 def yourjobs_list(request):
     if request.method == 'GET':
         
+        # gets the id of the logged in user
         user = request.user.id
 
         # Get all jobs user has checked out 
@@ -29,10 +31,12 @@ def yourjobs_list(request):
             tempObject = Job.objects.filter(id=tempId).first()
             print('debug me: ' + tempObject.title)
         
+            # takes all of the relationships in the userjob table and puts them into a new array of job objects where the user_id is the logged in user
             checkedout_jobs.append(tempObject)
 
         template = 'userjob/yourjobs_list.html'
-
+        
+        # sends the arrays of objects to the template
         context = {
             'yourjobs': yourjobs,
             'yoursubmittedjobs': yoursubmittedjobs,
@@ -40,12 +44,14 @@ def yourjobs_list(request):
         }
        
         return render(request, template, context)
-    
+
+    # handles post events driven by the buttons on the page
     elif request.method == 'POST':
         form_data = request.POST
 
         print(form_data)
 
+        # handles creating a new user job relationship when a user selects a job
         if form_data["actionType"] == "SelectOpportunity":
    
             new_userjob = UserJob(
@@ -56,13 +62,16 @@ def yourjobs_list(request):
 
             new_userjob.save()
 
-        # 
+        # For changing the boolean on the Job table to isComplete=True 
         elif form_data["actionType"] == "MarkComplete":
+            # grabs the value for the keyname job_id from the form data
             job_id = form_data["job_id"]
+            # Filters the Job table where the Job id === the job_id from the form data
             Job.objects.filter(id=job_id).update(isCompleted=True) 
 
         # For deleting a single userjob relationship
         elif form_data["actionType"] == "Deselect":
+            # grabs the value for the keyname other_job_id from the form data
             other_job_id = form_data["other_job_id"]
             tempCount = UserJob.objects.filter(job=other_job_id).count()
 
@@ -70,6 +79,14 @@ def yourjobs_list(request):
             UserJob.objects.filter(job=other_job_id).delete()
 
             print("this is the deselect for userjob relationship " + str(other_job_id) + " count: " + str(tempCount))
+
+        # For deleting a job from the job table
+        elif form_data["actionType"] == "Delete":
+            # grabs the value for the keyname other_job_id from the form data
+            other_job_id = form_data["other_job_id"]
+            Job.objects.filter(id=other_job_id).delete()
+
+            print("this is the delete button for job id " + other_job_id)
 
     return redirect(reverse('ijosephapp:yourjob'))
 

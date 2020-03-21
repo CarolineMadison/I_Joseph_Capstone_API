@@ -15,22 +15,28 @@
     <h1>YOUR JOBS TO COMPLETE</h1>
 
     <ol class="jobs">
+    {% comment %} iterates ofer the array of jobs checked out to the user {% endcomment %}
     {%for selectedjob in checkedout_jobs%}
+      {% comment %} and for each job where isCompleted == False {% endcomment %}
       {% if selectedjob.isCompleted == False %}
+        {% comment %} prints the title and the description for that job {% endcomment %}
         <li>
           <h2> {{ selectedjob.title}} </h2>
           <b1> {{ selectedjob.description}}<b1>
         </li>
-
+      {% comment %} handles changing the boolean in the job table from isCompleted == False to isCompleted == True {% endcomment %}
       <form action="{% url 'ijosephapp:yourjob' %}" method="POST">
         {% csrf_token %}
+          {% comment %} this takes the id of the checked out job and puts it into the form data {% endcomment %}
           <input value={{ selectedjob.id }} name="job_id" type="hidden">
+          {% comment %} and sets an action type to let python know how to handle it {% endcomment %}
           <input value="MarkComplete" name="actionType" type="hidden">
             <button value="MarkComplete" type="submit">MARK COMPLETE</button>
       </form>
-
+      {% comment %} handles deleting a userjob relationship from the userjob table {% endcomment %}
       <form action="{% url 'ijosephapp:yourjob' %}" method="POST">
         {% csrf_token %}
+          {% comment %} takes the id of the checked out job and puts it into the form data {% endcomment %}
           <input value={{ selectedjob.id }} name="other_job_id" type="hidden">
           <input value="Deselect" name="actionType" type="hidden">
             <button value="Deselect" type="submit">DESELECT</button>
@@ -43,23 +49,27 @@
     <br />
 
    <h1>YOUR SUBMITTED JOBS</h1>
-
+    {% comment %} iterates over the array of jobs a user has created {% endcomment %}
     <ol class="jobs">
+    {% comment %} and for each created job {% endcomment %}
     {%for submittedjob in yoursubmittedjobs %}
         <li>
+        {% comment %} prints the title of the job {% endcomment %}
           <h2> {{ submittedjob.title}} </h2>
+          {% comment %} and prints a string showing the user whether, or not their job has been completed {% endcomment %}
       {% if submittedjob.isCompleted == False  %}
           <b1> This job has not been completed. <b1>
           {% else %}
           <b1> This job is completed. </b1>
       {% endif %}
         </li>
-{% comment %} 
-        <form action="{% url 'ijosephapp:userjob' %}" method="POST">
+
+        <form action="{% url 'ijosephapp:yourjob' %}" method="POST">
             {% csrf_token %}
-            <input type="hidden" name="actual_method" value="DELETE">
-            <button>Delete</button>
-        </form> {% endcomment %}
+            <input value={{ submittedjob.id }} name="other_job_id" type="hidden">
+            <input type="hidden" name="actionType" value="Delete">
+              <button value="delete" type="submit">Delete</button>
+        </form> 
 
         {% comment %} <form action="{% url 'libraryapp:book_edit_form' book.id %}" method="GET">
             {% csrf_token %}
