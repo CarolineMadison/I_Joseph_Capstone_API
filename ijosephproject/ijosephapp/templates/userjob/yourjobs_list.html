@@ -15,28 +15,26 @@
     <h1>YOUR JOBS TO COMPLETE</h1>
 
     <ol class="jobs">
-    {% comment %} {% for yourjob in yourjobs %}  {% endcomment %}
     {%for selectedjob in checkedout_jobs%}
       {% if selectedjob.isCompleted == False %}
         <li>
           <h2> {{ selectedjob.title}} </h2>
           <b1> {{ selectedjob.description}}<b1>
         </li>
-        {% comment %} Also need to be able to have a DESELECT button that deletes the job from the userjob table by caputuring the userjob id, but doesn't delete the job or the user {% endcomment %}
-        <button>DESELECT</button>
-        {% comment %} Also need a button to mark the job as complete that turns the isComplete boolean field on the Job table to True and deletes it from the userJob list{% endcomment %}
-    
-        {% comment %} this will be a put that changes the boolean field in isCompleted to True {% endcomment %}
-        
-        
 
-      <form action="{% url 'ijosephapp:yourjob' %}" method="post">
+      <form action="{% url 'ijosephapp:yourjob' %}" method="POST">
         {% csrf_token %}
           <input value={{ selectedjob.id }} name="job_id" type="hidden">
           <input value="MarkComplete" name="actionType" type="hidden">
             <button value="MarkComplete" type="submit">MARK COMPLETE</button>
       </form>
-      {% comment %} {% endif %} {% endcomment %}
+
+      <form action="{% url 'ijosephapp:yourjob' %}" method="POST">
+        {% csrf_token %}
+          <input value={{ selectedjob.id }} name="other_job_id" type="hidden">
+          <input value="Deselect" name="actionType" type="hidden">
+            <button value="Deselect" type="submit">DESELECT</button>
+      </form>
       {% endif %}
     {% endfor %}
     </ol>
@@ -47,7 +45,6 @@
    <h1>YOUR SUBMITTED JOBS</h1>
 
     <ol class="jobs">
-    {% comment %} {% for yourjob in yourjobs %}  {% endcomment %}
     {%for submittedjob in yoursubmittedjobs %}
         <li>
           <h2> {{ submittedjob.title}} </h2>
@@ -57,35 +54,24 @@
           <b1> This job is completed. </b1>
       {% endif %}
         </li>
-      
-        {% comment %} Also need to be able to have a DESELECT button that deletes the job from the userjob table by caputuring the userjob id, but doesn't delete the job or the user {% endcomment %}
-        {% comment %} <button>DESELECT</button> {% endcomment %}
-        {% comment %} Also need a button to mark the job as complete that turns the isComplete boolean field on the Job table to True and deletes it from the userJob list{% endcomment %}
-        {% comment %} <button>COMPLETED</button> {% endcomment %}
-      {% comment %} {% endif %} {% endcomment %}
+{% comment %} 
+        <form action="{% url 'ijosephapp:userjob' %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="actual_method" value="DELETE">
+            <button>Delete</button>
+        </form> {% endcomment %}
+
+        {% comment %} <form action="{% url 'libraryapp:book_edit_form' book.id %}" method="GET">
+            {% csrf_token %}
+            <button>Edit</button>
+        </form> {% endcomment %}
+
+        <button>Edit</button>
+
     {% endfor %}
     </ol>
-
-    
-
-    {% comment %} <h1>JOBS YOU'VE CREATED</h1> {% endcomment %}
-    {% comment %} NEED A LIST OF JOBS HERE WHERE THE USER_ID ON THE JOB TABLE IS THE SAME AS THE USER ID. NEED TO SHOW IF THE isComplete field is True or False {% endcomment %}
-    {% comment %} NEED DELETE AND EDIT FUNCTIONALITY FOR A JOB HERE {% endcomment %}
 
   </body>
 </html>
 
 {% endblock %}
-
-
-{% comment %} 
- <li>Department: {{ employee.department }}</li>
-	        <li>Computer: {{ employee.computer }}</li>
-	        <li>Training Programs:
-	        	<ul>
-	            {% for training_program in training_programs %}
-	                <li>{{ training_program.title }}</li>
-	            {% endfor %}
-	           </ul>
-	        </li> {% endcomment %}
-
