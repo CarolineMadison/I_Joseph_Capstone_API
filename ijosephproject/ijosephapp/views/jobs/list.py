@@ -36,7 +36,12 @@ def job_list(request):
             updatedtitle = form_data["title"]
             print("Debug in job update, the job_to_edit_id: " + str(job_id) + " title, " + updatedtitle)
 
-            Job.objects.filter(pk=job_id).update(title=updatedtitle)
+            Job.objects.filter(pk=job_id).update(
+                title = form_data["title"],
+                location = form_data["location"],
+                description = form_data["description"]
+    
+                )
 
             # updated_job = Job(
             #     title = form_data['title']
