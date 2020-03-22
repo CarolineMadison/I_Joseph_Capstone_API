@@ -98,9 +98,34 @@ def yourjobs_list(request):
 
             print("this is the delete button for job id " + other_job_id)
 
+        elif form_data["actionType"] == "Edit":
+            # grabs the value for the job_id in the form data
+            edit_job_id = form_data["edit_job_id"]
+            Job.objects.get(pk=edit_job_id)
+            
+            print("this is the edit button for job id " + edit_job_id)
+
     return redirect(reverse('ijosephapp:yourjob'))
 
 
+@login_required
+def yourjob_edit_form(request, job_id):
+    if request.method == 'GET':
+        form_data = request.GET
+
+        if form_data["actionType"] == "Edit":
+
+            job_to_edit = Job.objects.get(id=job_id)
+
+            print("this is the job_to_edit, " + job_to_edit.title)
+            
+            template = 'jobs/form.html'
+
+            context = {
+                'job_to_edit': job_to_edit
+            }
+
+    return render(request, template, context)
 
 
 

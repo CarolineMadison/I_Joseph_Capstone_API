@@ -77,9 +77,13 @@
         {% comment %} <form action="{% url 'libraryapp:book_edit_form' book.id %}" method="GET">
             {% csrf_token %}
             <button>Edit</button>
-        </form> {% endcomment %}
-
-        <button>Edit</button>
+        </form> {% endcomment %}  
+        <form action="{% url 'ijosephapp:yourjob_edit_form' submittedjob.id %}" method="GET">
+            {% csrf_token %}
+            <input value={{ submittedjob.id }} name="edit_job_id" type="hidden">
+            <input type="hidden" name="actionType" value="Edit">
+              <button value="edit" type="submit">Edit</button>
+        </form> 
 
     {% endfor %}
     </ol>
