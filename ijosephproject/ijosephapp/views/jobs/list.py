@@ -39,19 +39,9 @@ def job_list(request):
             Job.objects.filter(pk=job_id).update(
                 title = form_data["title"],
                 location = form_data["location"],
-                description = form_data["description"]
-    
+                description = form_data["description"],
+                # category_id = form_data['category']
                 )
-
-            # updated_job = Job(
-            #     title = form_data['title']
-            #     # category_id = form_data['category'],
-            #     # location = form_data['location'],
-            #     # description = form_data['description'],
-            #     # isCompleted = isCompleted,
-            #     # user_id = request.user.id
-            # )
-            # updated_job.update()
 
         elif form_data["actionType"] == "NewJob":
 
