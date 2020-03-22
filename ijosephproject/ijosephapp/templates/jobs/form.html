@@ -18,6 +18,8 @@
 
     <form action="{% url 'ijosephapp:jobs' %}" method="post">
       {% csrf_token %}
+
+      {% if job_to_edit == None %}
       <fieldset>
           <label for="title">Title: </label>
           <input id="title" type="text" name="title" autofocus>
@@ -38,10 +40,20 @@
                 {% endfor %}
           </select>
       </fieldset>
+        <input type="hidden" name="actionType" value="NewJob">
+        <button type="submit" value="Submit">Submit</button>
+      {% else %}
+      <fieldset>
+          <label for="title">Title: </label>
+          <input id="title" type="text" name="title" value="{{ job_to_edit.title }}" autofocus>
+      </fieldset>
+        <input type="hidden" name="job_to_edit_id" value={{job_to_edit.id}}>
+        <input type="hidden" name="actionType" value="Update">
+        <button type="submit" value="Update">Update</button>
+      {% endif %}
 
-          {% comment %} <input value="False" name="isCompleted" type="hidden"> {% endcomment %}
-          
-       <button type="submit" value="Submit">Submit</button>
+
+
     </form>
     </div>
   </body>

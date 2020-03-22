@@ -28,17 +28,38 @@ def job_list(request):
     
     elif request.method == 'POST':
         form_data = request.POST
-        isCompleted = form_data.get("isCompleted", False)
-       
-        new_job = Job(
-            title = form_data['title'],
-            category_id = form_data['category'],
-            location = form_data['location'],
-            description = form_data['description'],
-            isCompleted = isCompleted,
-            user_id = request.user.id
-        )
 
-        new_job.save()
+        if form_data["actionType"] == "Update":
+            #update code here
+            isCompleted = form_data.get("isCompleted", False)
+            job_id = form_data["job_to_edit_id"]
+            updatedtitle = form_data["title"]
+            print("Debug in job update, the job_to_edit_id: " + str(job_id) + " title, " + updatedtitle)
+
+            Job.objects.filter(pk=job_id).update(title=updatedtitle)
+
+            # updated_job = Job(
+            #     title = form_data['title']
+            #     # category_id = form_data['category'],
+            #     # location = form_data['location'],
+            #     # description = form_data['description'],
+            #     # isCompleted = isCompleted,
+            #     # user_id = request.user.id
+            # )
+            # updated_job.update()
+
+        elif form_data["actionType"] == "NewJob":
+
+            #this is a new record so add the object here
+            isCompleted = form_data.get("isCompleted", False)
+            new_job = Job(
+                title = form_data['title'],
+                category_id = form_data['category'],
+                location = form_data['location'],
+                description = form_data['description'],
+                isCompleted = isCompleted,
+                user_id = request.user.id
+            )
+            new_job.save()
 
         return redirect(reverse('ijosephapp:jobs'))
