@@ -47,6 +47,31 @@
           <label for="title">Title: </label>
           <input id="title" type="text" name="title" value="{{ job_to_edit.title }}" autofocus>
       </fieldset>
+      <fieldset>
+          <label for="location">Location: </label>
+          <input id="location" type="text" name="location" value="{{ job_to_edit.location }}" autofocus>
+      </fieldset>
+      <fieldset>
+          <label for="description">Description: </label>
+          <input id="description" type="text" name="description" value="{{ job_to_edit.description }}" autofocus>
+      </fieldset>
+      {% comment %} <fieldset>
+          <label for="category">Category: </label>
+          <select id="category" type="text" name="category">
+                {% for category in all_categories %}
+                    <option value="{{ category.id }}">{{ job_to_edit.category }}</option>
+                {% endfor %}
+          </select>
+      </fieldset> {% endcomment %}
+
+
+
+
+
+
+
+
+
         <input type="hidden" name="job_to_edit_id" value={{job_to_edit.id}}>
         <input type="hidden" name="actionType" value="Update">
         <button type="submit" value="Update">Update</button>
