@@ -15,7 +15,10 @@
     <h1>YOUR JOBS TO COMPLETE</h1>
 
     <ol class="jobs">
-    {% comment %} iterates ofer the array of jobs checked out to the user {% endcomment %}
+
+    {% if checkedout_job_count == 0 %}
+      <h1>You Don't Have Any Checked Out Jobs</h1>
+    {% endif %}
     {%for selectedjob in checkedout_jobs%}
       {% comment %} and for each job where isCompleted == False {% endcomment %}
       {% if selectedjob.isCompleted == False %}

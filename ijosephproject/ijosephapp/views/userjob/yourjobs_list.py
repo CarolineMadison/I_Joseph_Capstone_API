@@ -33,6 +33,15 @@ def yourjobs_list(request):
         
             # takes all of the relationships in the userjob table and puts them into a new array of job objects where the user_id is the logged in user
             checkedout_jobs.append(tempObject)
+        
+        checkedout_job_count = 0
+        for checkedout_job in checkedout_jobs:
+            if checkedout_job.isCompleted == False:
+                checkedout_job_count = checkedout_job_count + 1
+
+            
+
+        print("Your Job Count: " + str(checkedout_job_count))
 
         template = 'userjob/yourjobs_list.html'
         
@@ -40,7 +49,8 @@ def yourjobs_list(request):
         context = {
             'yourjobs': yourjobs,
             'yoursubmittedjobs': yoursubmittedjobs,
-            'checkedout_jobs': checkedout_jobs
+            'checkedout_jobs': checkedout_jobs,
+            'checkedout_job_count': checkedout_job_count
         }
        
         return render(request, template, context)

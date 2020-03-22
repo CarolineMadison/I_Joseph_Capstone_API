@@ -15,15 +15,17 @@
 </head>
 
 <body>
-
+    {% if user.is_authenticated %}
     <nav id="site-nav">
         <ol class="navList">
             <a href="{% url 'ijosephapp:home' %}"><img id="logo"src="{% static 'images/ijosephlogo.png' %}" alt="iJoseph Logo"></a>
-            <li class="navList__route"><a href="{% url 'ijosephapp:register' %}">Register</a></li>
-            <li class="navList__route"><a href="{% url 'ijosephapp:login' %}">Login</a></li>
+            <li class="navList__route"><a href="{% url 'ijosephapp:yourjob' %}">Dashboard</a></li>
             <li class="navList__route"><a href="{% url 'ijosephapp:logout' %}">Log Out</a></li>
         </ol>
     </nav>
+        {% comment %} {% else %} {% endcomment %}
+    {% endif %}
+            
 
     {% block content %}
     {% endblock %}
