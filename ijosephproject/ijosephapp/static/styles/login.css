@@ -1,0 +1,33 @@
+body {
+    background-color: black;
+}
+
+.home {
+    padding-top: 250px;
+    padding-bottom: 50px;
+    padding-left: 125px;
+    padding-right: 125px;
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Raleway', sans-serif;
+    text-transform: lowercase;
+}
+
+.form {
+    font-size: 60px;
+    color: antiquewhite;
+    font-family: 'Raleway', sans-serif;
+}
+
+.submit {
+    font-size: 70px;
+    color: #00c18c;
+    font-family: 'Raleway', sans-serif;
+}
+
+input {
+    margin-top: 10px;
+    font-size: 50px;
+    border: lightblue solid;
+    padding: 10px;
+}

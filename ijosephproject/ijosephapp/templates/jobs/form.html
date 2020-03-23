@@ -6,42 +6,37 @@
   <head>
     <meta charset="utf-8">
     <title>iJoseph</title>
-    {% comment %} <link rel="stylesheet" href="{% static 'styles/applyforhelpform.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/job_form.css' %}" />
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     {% block css %}
-    {% endblock %} {% endcomment %}
+    {% endblock %}
   </head>
   <body>
-    <div>
-    <h1>Apply for Help</h1>
+    <div class="home">
+    <h1 class="apply-for-help">Apply for Help</h1>
 
 
     <form action="{% url 'ijosephapp:jobs' %}" method="post">
       {% csrf_token %}
 
       {% if job_to_edit == None %}
-      <fieldset>
-          <label for="title">Title: </label>
-          <input id="title" type="text" name="title" autofocus>
-      </fieldset>
-      <fieldset>
-          <label for="location">Location: </label>
-          <input id="location" type="text" name="location">
-      </fieldset>
-      <fieldset>
-          <label for="description">Description: </label>
-          <input id="description" type="text" name="description">
-      </fieldset>
-      <fieldset>
+     
+          <input id="title" type="text" name="title" placeholder="title" autofocus>
+     
+          <input id="location" type="text" name="location" placeholder="location">
+      
+          <input id="description" type="text" name="description" placeholder="description"></br>
+    
           <label for="category">Category: </label>
-          <select id="category" type="text" name="category">
+          <select id="category" type="text" name="category" class="category" style = "font-family:georgia,garamond,serif;font-size:30px;font-style:italic;">
+                    <option>select one</option>
                 {% for category in all_categories %}
                     <option value="{{ category.id }}">{{ category.category }}</option>
                 {% endfor %}
-          </select>
-      </fieldset>
+          </select></br></br>
+      
         <input type="hidden" name="actionType" value="NewJob">
-        <button type="submit" value="Submit">Submit</button>
+        <button type="submit" class="submit-BTN" value="Submit">submit</button>
       {% else %}
       <fieldset>
           <label for="title">Title: </label>
@@ -55,30 +50,10 @@
           <label for="description">Description: </label>
           <input id="description" type="text" name="description" value="{{ job_to_edit.description }}" autofocus>
       </fieldset>
-      {% comment %} <fieldset>
-          <label for="category">Category: </label>
-          <select id="category" type="text" name="category">
-                {% for category in all_categories %}
-                    <option value="{{ category.id }}">{{ job_to_edit.category }}</option>
-                {% endfor %}
-          </select>
-      </fieldset> {% endcomment %}
-
-
-
-
-
-
-
-
-
         <input type="hidden" name="job_to_edit_id" value={{job_to_edit.id}}>
         <input type="hidden" name="actionType" value="Update">
         <button type="submit" value="Update">Update</button>
       {% endif %}
-
-
-
     </form>
     </div>
   </body>

@@ -1,0 +1,50 @@
+body {
+    background-color: black;
+}
+
+.home {
+    padding-top: 250px;
+    padding-bottom: 50px;
+    padding-left: 125px;
+    padding-right: 125px;
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.submit-BTN {
+    justify-content: center;
+    color: #00c18c;
+    font-size: 70px;
+    padding: 10px 10px 10px 10px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.apply-for-help {
+    font-size: 3.5em;
+    color: antiquewhite;
+}
+
+label {
+    color: antiquewhite;
+}
+
+
+form {
+    font-size: 30px;
+    color: antiquewhite;
+    font-family: 'Raleway', sans-serif;
+}
+
+input {
+    margin-top: 10px;
+    font-size: 50px;
+    padding: 10px;
+}
+
+.category {
+    margin-top: 10px;
+    font-size: 20px;
+    background-color: white;
+    padding: 10px;
+}

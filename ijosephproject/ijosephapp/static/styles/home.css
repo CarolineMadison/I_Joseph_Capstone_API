@@ -1,27 +1,65 @@
 .home {
-    background-color: white;
-    padding-top: 300px;
+    padding-top: 250px;
     padding-bottom: 50px;
+    padding-left: 125px;
+    padding-right: 125px;
     text-align: center;
-    margin: 0;
-    font-size: 1.5em;
+    margin-top: 50px;
     font-family: 'Raleway', sans-serif;
 }
 
-/* #logoHome {
-    max-width: 75%;
-} */
+.welcome {
+    font-size: 3.5em;
+    color: antiquewhite;
+}
 
-#homeBTN {
-    font-size: .8em;
-    font-family: 'Raleway', sans-serif;
-    border: lightgrey solid 5px;
+
+body {
     background-color: black;
-    color: white;
-    text-decoration: none;
-    padding: .3em;
 }
 
-#homeBTN:hover {
-    color: red;
+#i-Joseph-main-Logo {
+    /* align-items: center; */
+    width: 100%;
+}
+
+.become-a-helper-BTN {
+    justify-content: center;
+    color: #00c18c;
+    font-size: 4em;
+    padding: 10px 10px 10px 10px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.ask-for-help-BTN {
+    margin-top: 20px;
+    justify-content: center;
+    color: #00c18c;
+    font-size: 4em;
+    padding: 10px 10px 10px 10px;
+    font-family: 'Raleway', sans-serif;
+}
+
+
+.sign-in-BTN {
+
+    margin-top: 20px;
+    justify-content: center;
+    color: #00c18c;
+    font-size: 4em;
+    padding: 10px 10px 10px 10px;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.register-BTN {
+    justify-content: center;
+    color: #00c18c;
+    font-size: 4em;
+    padding: 10px 10px 10px 10px;
+    font-family: 'Raleway', sans-serif;
+}
+
+a:hover {
+    color: black;
 }

@@ -18,12 +18,12 @@
     {% if user.is_authenticated %}
     <nav id="site-nav">
         <ol class="navList">
-            <a href="{% url 'ijosephapp:home' %}"><img id="logo"src="{% static 'images/ijosephlogo.png' %}" alt="iJoseph Logo"></a>
-            <li class="navList__route"><a href="{% url 'ijosephapp:yourjob' %}">Dashboard</a></li>
-            <li class="navList__route"><a href="{% url 'ijosephapp:logout' %}">Log Out</a></li>
+            <a href="{% url 'ijosephapp:home' %}"><img id="logo"src="{% static 'images/i-joseph-large-logo.png' %}" alt="iJoseph Logo"></a>
+            <li class="navList__route__dashboard"><a href="{% url 'ijosephapp:yourjob' %}">dashboard</a></li>
+            </br>
+            <li class="navList__route__sign_out"><a href="{% url 'ijosephapp:logout' %}">logout</a></li>
         </ol>
     </nav>
-        {% comment %} {% else %} {% endcomment %}
     {% endif %}
             
 

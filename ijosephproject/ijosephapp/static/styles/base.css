@@ -1,34 +1,45 @@
-.main-content {
-    padding: 1em 2em;
-}
-
 .navList {
-    font-size: 1.5em;
+    font-size: 30px;
     font-family: 'Raleway', sans-serif;
     list-style-type: none;
     display: flex;
-    border: 1px solid lightgray;
-    padding: 1em;
-    margin: 0;
+    margin-bottom: 10px;
+    border-bottom: solid antiquewhite 2px;
 }
 
-.navList__route {
-    margin: 0 2em;
+.navList__route__dashboard {
+    margin-top: 43px;
+    color: antiquewhite;
+    margin-right: 50px;
+    margin-left: 10px;
+}
+
+.navList__route__sign_out {
+    margin-top: 43px;
+    color: antiquewhite;
+    margin-right: 55px;
+    margin-left: 10px;
 }
 
 #logo {
-    max-width: 45%;
-    margin-left: 1em;
-
+    max-width: 60%;
 }
 
 a:active {
-    color: black;
+    color: #00c18c;
 }
 a:visited {
-    color: black;
+    color: #00c18c;
 }
 
 a {
     text-decoration: none;
+}
+
+a:hover {
+    color: black;
+}
+
+body {
+    padding: 10px;
 }
