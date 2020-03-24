@@ -56,7 +56,7 @@
     {% if checkedout_job_count == 0 %}
       <h2>You Don't Have Any Submitted Jobs</h2>
       <a class="become-a-helper-BTN" href="{% url 'ijosephapp:job_form' %}">apply for help</a>
-    {% endif %}
+    {% else %}
     {% comment %} and for each created job {% endcomment %}
     {%for submittedjob in yoursubmittedjobs %}
         <li>
@@ -82,8 +82,8 @@
             <input type="hidden" name="actionType" value="Edit">
               <button value="edit" type="submit" class="submit">edit</button>
         </form> 
-
-    {% endfor %}
+      {% endfor %}
+    {% endif %}
     </ul>
   </div>
   </body>
