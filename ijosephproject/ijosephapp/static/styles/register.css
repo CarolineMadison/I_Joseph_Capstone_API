@@ -26,5 +26,7 @@ body {
 input {
     margin-top: 10px;
     border: lightblue solid;
-    padding: 10px;
+    padding: 30px;
+    width: 75%;
+    font-size: 30px;
 }

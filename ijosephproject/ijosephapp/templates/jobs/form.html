@@ -13,13 +13,13 @@
   </head>
   <body>
     <div class="home">
-    <h1 class="apply-for-help">Apply for Help</h1>
 
 
     <form action="{% url 'ijosephapp:jobs' %}" method="post">
       {% csrf_token %}
 
       {% if job_to_edit == None %}
+          <h1 class="apply-for-help">apply for help</h1>
      
           <input id="title" type="text" name="title" placeholder="title" autofocus>
      
@@ -38,21 +38,17 @@
         <input type="hidden" name="actionType" value="NewJob">
         <button type="submit" class="submit-BTN" value="Submit">submit</button>
       {% else %}
-      <fieldset>
-          <label for="title">Title: </label>
-          <input id="title" type="text" name="title" value="{{ job_to_edit.title }}" autofocus>
-      </fieldset>
-      <fieldset>
-          <label for="location">Location: </label>
-          <input id="location" type="text" name="location" value="{{ job_to_edit.location }}" autofocus>
-      </fieldset>
-      <fieldset>
-          <label for="description">Description: </label>
-          <input id="description" type="text" name="description" value="{{ job_to_edit.description }}" autofocus>
-      </fieldset>
+      
+          
+        <input id="title" type="text" name="title" value="{{ job_to_edit.title }}" autofocus>
+    
+     
+        <input id="location" type="text" name="location" value="{{ job_to_edit.location }}">
+
+        <input id="description" type="text" name="description" value="{{ job_to_edit.description }}"></br></br>
         <input type="hidden" name="job_to_edit_id" value={{job_to_edit.id}}>
         <input type="hidden" name="actionType" value="Update">
-        <button type="submit" value="Update">Update</button>
+        <button type="submit" value="Update" class="submit-BTN">update</button>
       {% endif %}
     </form>
     </div>
