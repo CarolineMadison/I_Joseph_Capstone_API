@@ -1,54 +1,49 @@
-.jobs {
-    list-style: none;
+body {
+    background-color: black;
+}
+
+.card-content {
+    background: white;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-direction: column;
+    float: left;
+    margin: 15px 57px 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 4px 6px rgba(0,0,0,.3);
+    box-shadow: 0 4px 6px rgba(0,0,0,.3);
+    -webkit-transition: all .15s linear;
+    -moz-transition: all .15s linear;
+    transition: all .15s linear;
+    z-index:0;
+    position:relative; 
+}
+
+.smalllogo {
+    padding-top: 50px;
+    width: 30%;
 }
 
 .job {
-    flex-basis: 20%;
-    padding: 0 2em 0.5em 2em;
-    border: 1px solid gray;
     margin: 1em;
-    padding: 1.5em;
-    font-size: 1.5em;
+    font-size: 2em;
     font-family: 'Raleway', sans-serif;
-    text-align: center;
+    color: #20355a;
 }
-
-/* .book__title {
-    font-size: 1.1em;
-}
-
-.book__description {
-    font-size: 0.75em;
-} */
-
-/* .job {
-    background-color: white;
-    padding-top: 300px;
-    padding-bottom: 50px;
-    text-align: center;
-    margin: 0;
-    font-size: 1.5em;
-    font-family: 'Raleway', sans-serif;
-} */
-
-/* #logoHome {
-    max-width: 75%;
-} */
 
 #detailsBTN {
-    font-size: .8em;
+    font-size: 50px;
+    color: #00c18c;
     font-family: 'Raleway', sans-serif;
-    border: lightgrey solid 5px;
-    background-color: black;
-    color: white;
-    text-decoration: none;
-    padding: .3em;
 }
 
 a:hover {
-    color: red;
+    color: black;
 }
+
+ul {
+    list-style-type: none;
+}
+    

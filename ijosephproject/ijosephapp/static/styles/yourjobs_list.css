@@ -1,0 +1,63 @@
+body {
+    background-color: black;
+}
+
+.home {
+    padding-top: 150px;
+    padding-bottom: 50px;
+    padding-left: 130px;
+    padding-right: 130px;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+.jobs {
+    margin: 1em;
+    font-size: 2em;
+    font-family: 'Raleway', sans-serif;
+    color: #20355a;
+}
+
+.card-content {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    box-shadow: 15px 15px 0px 0px #7accc8;
+    position:relative; 
+    color: navy;
+    font-size: 30px;
+    padding: 70px 70px 70px 70px;
+}
+
+.section-title {
+    font-size: 60px;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+    color: antiquewhite;
+    text-align: center;
+}
+
+.submit {
+    font-size: 40px;
+    color: #00c18c;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+.become-a-helper-BTN {
+    font-size: 40px;
+    color: #00c18c;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+p {
+    text-align: left;
+}

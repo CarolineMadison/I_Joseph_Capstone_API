@@ -1,0 +1,41 @@
+body {
+    background-color: black;
+}
+
+.home {
+    padding-top: 250px;
+    padding-bottom: 50px;
+    padding-left: 157px;
+    padding-right: 125px;
+    font-family: 'Raleway', sans-serif;
+    /* text-align: center; */
+}
+
+label {
+    font-size: 39px;
+    color: #00c18c;
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.card-content {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 57px 0px 15px;
+    text-decoration: none;
+    box-shadow: 15px 15px 3px 0px #7accc8;
+    position:relative; 
+    color: navy;
+    font-size: 30px;
+    margin-top: -85px;
+    padding: 70px 70px 70px 70px;
+}
+
+.submit {
+    font-size: 70px;
+    color: #00c18c;
+    font-family: 'Raleway', sans-serif;
+    margin-left: 12px;  
+}

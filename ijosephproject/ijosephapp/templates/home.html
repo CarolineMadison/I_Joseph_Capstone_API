@@ -17,17 +17,34 @@
 <body>
     <div class="home">
     {% if user.is_authenticated %}
+        <img id="logo" src="{% static 'images/ijosephcircleLogo.png' %}" alt="iJoseph Logo">
+        </br></br>
     {% else %}
-        <h1>Welcome to, </h1>
-    {% endif %}
-        <img src="{% static 'images/ijosephlogo.png' %}" alt="iJoseph Logo">
-            <h1>A Community of Helpers<h/1></br></br>
+        <h1 class="welcome">Welcome to, </h1>
+        <img id="i-Joseph-main-Logo"src="{% static 'images/i-joseph-large-logo.png' %}" alt="iJoseph Logo">
+        <h1 class="welcome">A Community of Helpers</h1>
+        </br>
+        <hr />
+        </br>
+        </br>
+    {% endif %} 
         {% if user.is_authenticated %}
-            <a id="homeBTN" href="{% url 'ijosephapp:jobs' %}">Become a Helper</a></br></br>
-            <a id="homeBTN" href="{% url 'ijosephapp:job_form' %}">Ask for Help</a>
+            </br>
+            <div>
+                <a class="become-a-helper-BTN" href="{% url 'ijosephapp:jobs' %}">become a helper</a>
+            </div>
+            </br>
+            <div>
+                <a class="ask-for-help-BTN" href="{% url 'ijosephapp:job_form' %}">apply for help</a>
+            </div>
             {% else %}
-            <a id="homeBTN" href="{% url 'ijosephapp:register' %}">Register</a></br></br>
-            <a id="homeBTN" href="{% url 'ijosephapp:login' %}">Sign In</a></br></br>
+            <div>
+                <a class="register-BTN" href="{% url 'ijosephapp:register' %}">register</a>
+            </div>
+            </br>
+            <div>
+                <a class="sign-in-BTN" href="{% url 'ijosephapp:login' %}">login</a>
+            </div>
         {% endif %}
     </div>
 </body>
