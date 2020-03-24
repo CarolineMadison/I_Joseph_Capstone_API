@@ -20,9 +20,12 @@
         <img id="logo" src="{% static 'images/ijosephcircleLogo.png' %}" alt="iJoseph Logo">
         </br></br>
     {% else %}
-        <h1 class="welcome">Welcome to, </h1>
+        {% comment %} <h1 class="welcome">Welcome to, </h1> {% endcomment %}
+        <hr />
+        </br>
         <img id="i-Joseph-main-Logo"src="{% static 'images/i-joseph-large-logo.png' %}" alt="iJoseph Logo">
         <h1 class="welcome">A Community of Helpers</h1>
+        </br>
         </br>
         <hr />
         </br>
@@ -37,6 +40,7 @@
             <div>
                 <a class="ask-for-help-BTN" href="{% url 'ijosephapp:job_form' %}">apply for help</a>
             </div>
+            </br>
             {% else %}
             <div>
                 <a class="register-BTN" href="{% url 'ijosephapp:register' %}">register</a>
