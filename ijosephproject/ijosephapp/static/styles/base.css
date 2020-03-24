@@ -1,28 +1,27 @@
 .navList {
-    font-size: 40px;
+    font-size: 50px;
     font-family: 'Raleway', sans-serif;
     list-style-type: none;
     display: flex;
-    margin-bottom: 10px;
     border-bottom: solid antiquewhite 2px;
 }
 
 .navList__route__dashboard {
-    margin-top: 43px;
+    margin-top: 20px;
     color: antiquewhite;
     margin-right: 50px;
     margin-left: 10px;
 }
 
 .navList__route__sign_out {
-    margin-top: 43px;
+    margin-top: 20px;
     color: antiquewhite;
     margin-right: 55px;
     margin-left: 10px;
 }
 
 #logo {
-    max-width: 60%;
+    max-width: 75%;
 }
 
 a:active {

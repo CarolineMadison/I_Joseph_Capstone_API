@@ -3,12 +3,12 @@ body {
 }
 
 .home {
-    padding-top: 250px;
+    padding-top: 255px;
     padding-bottom: 50px;
     padding-left: 125px;
     padding-right: 125px;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 80px;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -18,7 +18,7 @@ body {
 }
 
 .submit {
-    font-size: 70px;
+    font-size: 95px;
     color: #00c18c;
     font-family: 'Raleway', sans-serif;
 }
@@ -27,6 +27,6 @@ input {
     margin-top: 10px;
     border: lightblue solid;
     padding: 30px;
-    width: 75%;
-    font-size: 30px;
+    width: 90%;
+    font-size: 50px;
 }
