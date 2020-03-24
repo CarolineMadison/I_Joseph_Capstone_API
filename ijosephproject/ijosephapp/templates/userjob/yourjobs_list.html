@@ -53,11 +53,12 @@
    <h1 class="section-title">Your Submitted Jobs</h1>
     {% comment %} iterates over the array of jobs a user has created {% endcomment %}
     <ul class="card-content">
-    {% if checkedout_job_count == 0 %}
+
+    {% if submitted_job_count == 0 %}
       <h2>You Don't Have Any Submitted Jobs</h2>
       <a class="become-a-helper-BTN" href="{% url 'ijosephapp:job_form' %}">apply for help</a>
-    {% else %}
-    {% comment %} and for each created job {% endcomment %}
+    {% endif %}
+
     {%for submittedjob in yoursubmittedjobs %}
         <li>
         {% comment %} prints the title of the job {% endcomment %}
@@ -83,7 +84,8 @@
               <button value="edit" type="submit" class="submit">edit</button>
         </form> 
       {% endfor %}
-    {% endif %}
+      {% comment %} {% endif %} {% endcomment %}
+      {% comment %} {% endif %} {% endcomment %}
     </ul>
   </div>
   </body>
