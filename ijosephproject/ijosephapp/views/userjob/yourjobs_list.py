@@ -16,8 +16,6 @@ def yourjobs_list(request):
         # Get all jobs user has checked out 
         yourjobs = UserJob.objects.filter(user_id=user)
 
-        # Get all jobs user has submitted
-        yoursubmittedjobs = Job.objects.filter(user=user)
         
         #Init new array to hold jobs the user has checked out
         checkedout_jobs = []
@@ -34,12 +32,21 @@ def yourjobs_list(request):
             # takes all of the relationships in the userjob table and puts them into a new array of job objects where the user_id is the logged in user
             checkedout_jobs.append(tempObject)
         
+        # sets the counter to 0
         checkedout_job_count = 0
+        # iterates through the checkedout_jobs array
         for checkedout_job in checkedout_jobs:
+            # and if the isCompleted field for that job is False
             if checkedout_job.isCompleted == False:
+                # Counts the job 
                 checkedout_job_count = checkedout_job_count + 1
 
-            
+        # Get all jobs user has submitted
+        yoursubmittedjobs = Job.objects.filter(user=user)
+
+        submitted_job_count = 0
+        for submitted_job in yoursubmittedjobs:
+            submitted_job_count = submitted_job_count + 1
 
         print("Your Job Count: " + str(checkedout_job_count))
 
@@ -50,7 +57,8 @@ def yourjobs_list(request):
             'yourjobs': yourjobs,
             'yoursubmittedjobs': yoursubmittedjobs,
             'checkedout_jobs': checkedout_jobs,
-            'checkedout_job_count': checkedout_job_count
+            'checkedout_job_count': checkedout_job_count,
+            'submitted_job_count': submitted_job_count
         }
        
         return render(request, template, context)

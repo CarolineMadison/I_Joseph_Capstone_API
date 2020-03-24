@@ -3,25 +3,25 @@ body {
 }
 
 .home {
-    padding-top: 250px;
+    padding-top: 230px;
     padding-bottom: 50px;
     padding-left: 125px;
     padding-right: 125px;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 45px;
     font-family: 'Raleway', sans-serif;
 }
 
 .submit-BTN {
     justify-content: center;
     color: #00c18c;
-    font-size: 70px;
+    font-size: 90px;
     padding: 10px 10px 10px 10px;
     font-family: 'Raleway', sans-serif;
 }
 
 .apply-for-help {
-    font-size: 70px;
+    font-size: 90px;
     color: antiquewhite;
 }
 
@@ -31,20 +31,36 @@ label {
 
 
 form {
-    font-size: 30px;
+    font-size: 50px;
     color: antiquewhite;
     font-family: 'Raleway', sans-serif;
 }
 
-input {
+#location {
     margin-top: 10px;
-    font-size: 50px;
+    font-size: 65px;
     padding: 10px;
+    width: 90%;
 }
 
-.category {
+#description {
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 65px;
+    padding: 10px;
+    width: 90%;
+}
+
+#title   {
+    margin-top: 10px;
+    font-size: 65px;
+    padding: 10px;
+    width: 90%;
+}
+
+#category {
+    margin-top: 10px;
+    font-size: 30px;
     background-color: white;
     padding: 10px;
+    width: 50%;
 }
