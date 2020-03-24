@@ -1,10 +1,10 @@
 .home {
-    padding-top: 250px;
+    padding-top: 240px;
     padding-bottom: 50px;
     padding-left: 125px;
     padding-right: 125px;
     text-align: center;
-    margin-top: 75px;
+    margin-top: 50px;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -27,7 +27,7 @@ body {
 .become-a-helper-BTN {
     justify-content: center;
     color: #00c18c;
-    font-size: 4em;
+    font-size: 80px;
     padding: 10px 10px 10px 10px;
     font-family: 'Raleway', sans-serif;
 }
@@ -36,7 +36,7 @@ body {
     margin-top: 20px;
     justify-content: center;
     color: #00c18c;
-    font-size: 4em;
+    font-size: 80px;
     padding: 10px 10px 10px 10px;
     font-family: 'Raleway', sans-serif;
 }
