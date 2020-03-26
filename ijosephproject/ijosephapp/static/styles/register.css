@@ -18,9 +18,16 @@ body {
 }
 
 .submit {
-    font-size: 95px;
-    color: #00c18c;
+    font-size: 70px;
+    color: antiquewhite;
     font-family: 'Raleway', sans-serif;
+    text-align: center;
+    border: ridge #00c18c 20px;
+    background-color: #00c18c;
+    padding-left: 162px;
+    padding-right: 162px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 input {

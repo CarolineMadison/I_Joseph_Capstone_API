@@ -1,5 +1,5 @@
 .home {
-    padding-top: 285px;
+    padding-top: 265px;
     padding-bottom: 50px;
     padding-left: 125px;
     padding-right: 125px;
@@ -26,21 +26,28 @@ body {
 
 .become-a-helper-BTN-1 {
     font-size: 70px;
-    color: navy;
+    color: antiquewhite;
     font-family: 'Raleway', sans-serif;
     text-align: center;
-    border: ridge antiquewhite 10px;
-    background-color: antiquewhite; 
-    margin-top: 10px;
+    border: ridge #00c18c 20px;
+    background-color: #00c18c;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .ask-for-help-BTN-1 {
     font-size: 70px;
-    color: navy;
+    color: antiquewhite;
     font-family: 'Raleway', sans-serif;
     text-align: center;
-    border: ridge antiquewhite 10px;
-    background-color: antiquewhite; 
+    border: ridge #00c18c 20px;
+    background-color: #00c18c;
+    padding-left: 65px;
+    padding-right: 65px;
+    padding-top: 10px;
+    padding-bottom: 10px; 
 }
 
 
@@ -71,12 +78,15 @@ body {
     padding-bottom: 10px;
 }
 
-a:hover {
-    color: navy;
+a:visited {
+    color: antiquewhite;
 }
 
+.become-a-helper-BTN-1:visited {
+    color: antiquewhite;
+}
 .ask-for-help-BTN-1:visited {
-    color: navy;
+    color: antiquewhite
 }
 
 button {
