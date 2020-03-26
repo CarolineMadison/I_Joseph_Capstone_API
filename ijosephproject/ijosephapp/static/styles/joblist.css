@@ -30,18 +30,20 @@ body {
     margin: 1em;
     font-size: 2em;
     font-family: 'Raleway', sans-serif;
-    color: #20355a;
+    color: navy;
 }
 
 #detailsBTN {
     font-size: 60px;
-    color: #00c18c;
+    color: antiquewhite;
     font-family: 'Raleway', sans-serif;
     text-align: center;
-    border: ridge wheat 3px;
-    box-shadow: 12px 12px 9px 0px #7accc8;
-    background-color: lightgray;
-    padding: 5px;
+    border: ridge #00c18c 20px;
+    background-color: #00c18c;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 ul {

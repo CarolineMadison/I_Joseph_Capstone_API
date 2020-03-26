@@ -36,6 +36,7 @@
               <li class="job">
                 <img class="smalllogo"src="{% static 'images/ijosephCircleLogo.png' %}" alt="iJoseph Small Logo">
                 <h1 class="job-title"> {{ job.title }} </h1>
+                <br/>
                 <a id="detailsBTN" href="{% url 'ijosephapp:job' job.id %}">more information</a>
               </li>
               <br/>

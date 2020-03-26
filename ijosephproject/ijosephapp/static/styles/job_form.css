@@ -13,11 +13,16 @@ body {
 }
 
 .submit-BTN {
-    justify-content: center;
-    color: #00c18c;
-    font-size: 90px;
-    padding: 10px 10px 10px 10px;
+    font-size: 80px;
+    color: antiquewhite;
     font-family: 'Raleway', sans-serif;
+    text-align: center;
+    border: ridge #00c18c 20px;
+    background-color: #00c18c;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .apply-for-help {
@@ -63,4 +68,8 @@ form {
     background-color: white;
     padding: 10px;
     width: 50%;
+}
+
+a:visited {
+    color: antiquewhite;
 }
