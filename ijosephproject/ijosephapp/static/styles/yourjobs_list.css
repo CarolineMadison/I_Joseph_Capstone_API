@@ -23,16 +23,26 @@ body {
     padding: 40px 70px 40px 70px;
 }
 
-.section-title {
+.section-title-1 {
     font-size: 75px;
     font-family: 'Raleway', sans-serif;
     margin-top: 70px;
-}
-
-h1 {
     color: antiquewhite;
     text-align: center;
 }
+
+.section-title-2 {
+    font-size: 75px;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 70px;
+    color: antiquewhite;
+    text-align: center;
+}
+
+/* h1 {
+    color: antiquewhite;
+    text-align: center;
+} */
 
 .delete_button {
     font-size: 60px;
@@ -122,6 +132,13 @@ a:visited {
 #submitted_job_title {
     font-size: 70px;
     color: navy;
+    text-align: center;
+}
+
+#selected_job_title {
+    font-size: 70px;
+    color: navy;
+    text-align: center;
 }
 
 h3 {

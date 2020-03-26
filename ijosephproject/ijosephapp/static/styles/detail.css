@@ -11,7 +11,7 @@ body {
 }
 
 label {
-    font-size: 39px;
+    font-size: 45px;
     color: #00c18c;
     font-family: 'Raleway', sans-serif;
     font-style: italic;
@@ -27,8 +27,8 @@ label {
     box-shadow: 15px 15px 3px 0px #7accc8;
     position:relative; 
     color: navy;
-    font-size: 30px;
-    margin-top: -85px;
+    font-size: 40px;
+    margin-top: -165px;
     padding: 70px 70px 70px 70px;
 }
 
@@ -47,4 +47,10 @@ label {
 
 a:visited {
     color: antiquewhite;
+}
+
+.job_title {
+    font-size: 75px;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
 }
