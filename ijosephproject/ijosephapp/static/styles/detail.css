@@ -32,15 +32,19 @@ label {
     padding: 70px 70px 70px 70px;
 }
 
-.submit {
-    font-size: 75px;
-    color: navy;
+.submit_opportunity {
+    font-size: 60px;
+    color: antiquewhite;
     font-family: 'Raleway', sans-serif;
     text-align: center;
-    border: ridge #7accc8 10px;
-    background-color: #7accc8;
-    padding-left: 3px;
-    padding-right: 3px; 
-    margin-left: -10px;
-    margin-top: 10px; 
+    border: ridge #00c18c 20px;
+    background-color: #00c18c;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+a:visited {
+    color: antiquewhite;
 }

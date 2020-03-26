@@ -64,4 +64,8 @@ a {
 a:hover {
     color: navy;
 }
+
+a:visited {
+    color: antiquewhite;
+}
     
