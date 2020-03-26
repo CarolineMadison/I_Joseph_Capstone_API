@@ -41,8 +41,8 @@ h1 {
     text-align: center;
     border: ridge #00c18c 20px;
     background-color: #00c18c;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 110px;
+    padding-right: 110px;
     padding-top: 10px;
     padding-bottom: 10px; 
 }
@@ -54,8 +54,8 @@ h1 {
     text-align: center;
     border: ridge #00c18c 20px;
     background-color: #00c18c;
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 145px;
+    padding-right: 145px;
     padding-top: 10px;
     padding-bottom: 10px; 
 }
@@ -71,6 +71,32 @@ h1 {
     padding-right: 14px;
     padding-top: 10px;
     padding-bottom: 10px;  
+}
+
+.submit_mark_complete {
+    font-size: 60px;
+    color: antiquewhite;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    border: ridge #00c18c 20px;
+    background-color: #00c18c;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.submit_deselect {
+    font-size: 60px;
+    color: antiquewhite;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    border: ridge #00c18c 20px;
+    background-color: #00c18c;
+    padding-left: 105px;
+    padding-right: 105px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 ul {

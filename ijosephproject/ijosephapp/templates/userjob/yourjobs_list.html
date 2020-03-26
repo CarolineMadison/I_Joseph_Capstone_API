@@ -37,7 +37,7 @@
           <input value={{ selectedjob.id }} name="job_id" type="hidden">
           {% comment %} and sets an action type to let python know how to handle it {% endcomment %}
           <input value="MarkComplete" name="actionType" type="hidden">
-            <button value="MarkComplete" type="submit" class="submit">mark complete</button>
+            <button value="MarkComplete" type="submit" class="submit_mark_complete">mark complete</button>
       </form></br>
       {% comment %} handles deleting a userjob relationship from the userjob table {% endcomment %}
       <form action="{% url 'ijosephapp:yourjob' %}" method="POST">
@@ -45,7 +45,7 @@
           {% comment %} takes the id of the checked out job and puts it into the form data {% endcomment %}
           <input value={{ selectedjob.id }} name="other_job_id" type="hidden">
           <input value="Deselect" name="actionType" type="hidden">
-            <button value="Deselect" type="submit" class="submit">deselect</button>
+            <button value="Deselect" type="submit" class="submit_deselect">deselect</button>
       </form></br>
       {% endif %}
     {% endfor %}
