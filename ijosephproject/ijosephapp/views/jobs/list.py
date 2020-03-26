@@ -9,18 +9,25 @@ from django.contrib.auth.decorators import login_required
 def job_list(request):
     if request.method == 'GET':
         
+        user = request.user.id
+
         all_jobs = Job.objects.all()
     
+        # gets all jobs user has submitted
+        yoursubmittedjobs = Job.objects.filter(user=user).first()
 
-        
+        print('THESE ARE THE SUBMITTED JOBS: ' + str(yoursubmittedjobs))
 
         user_jobs = UserJob.objects.all()
 
         notcheckedout_jobs = []
         for job in all_jobs:
+            # checking in userjob relationship to see if job is checked out
             jobcheckedoutcount = user_jobs.filter(job_id=job.id).count()
-            print('debugme: job.id ' + str(job.id) + " " + job.title + " " + str(jobcheckedoutcount) )
-            if jobcheckedoutcount == 0:
+            print('debugme: job.id ' + str(job.id) + " " + job.title + " " + str(jobcheckedoutcount) + " " + str(job.user_id))
+            # if the job is not checked out and the current user didn't create it
+            if jobcheckedoutcount == 0 and job.user_id != user:
+                # put that job into the notcheckedout_jobs
                 notcheckedout_jobs.append(job)
 
         notcheckedout_jobs_count = len(notcheckedout_jobs)
@@ -29,7 +36,7 @@ def job_list(request):
 
         context = {
             'notcheckedout_jobs': notcheckedout_jobs,
-            'notcheckedout_jobs_count': notcheckedout_jobs_count
+            'notcheckedout_jobs_count': notcheckedout_jobs_count,
         }
        
         return render(request, template, context)

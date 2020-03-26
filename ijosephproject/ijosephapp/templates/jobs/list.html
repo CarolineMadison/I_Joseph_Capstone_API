@@ -20,7 +20,7 @@
     {% endblock %}
   </head>
   <body>
-        
+      user = request.user.id  
       {% if notcheckedout_jobs_count == 0 %}
         <div class="no_opportunties_message">
         <hr>
@@ -31,23 +31,23 @@
         </div>
         {% else %}
           {% for job in notcheckedout_jobs %}
-      <ul>
-            <div class="card-content">
-              <li class="job">
-                <img class="smalllogo"src="{% static 'images/ijosephCircleLogo.png' %}" alt="iJoseph Small Logo">
-                <h1 class="job-title"> {{ job.title }} </h1>
+              <ul>
+                <div class="card-content">
+                <li class="job">
+                  <img class="smalllogo"src="{% static 'images/ijosephCircleLogo.png' %}" alt="iJoseph Small Logo">
+                  <h1 class="job-title"> {{ job.title }} </h1>
+                  <br/>
+                  <a id="detailsBTN" href="{% url 'ijosephapp:job' job.id %}">more information</a>
+                </li>
                 <br/>
-                <a id="detailsBTN" href="{% url 'ijosephapp:job' job.id %}">more information</a>
-              </li>
-              <br/>
-              <br/>
-              <br/>
-              <br/>
-            </div>
-      </ul>
+                <br/>
+                <br/>
+                <br/>
+                </div>
+              </ul>  
           {% endfor %}
       {% endif %}
-  </body>co
+  </body>
 </html>
 
 {% endblock %}
