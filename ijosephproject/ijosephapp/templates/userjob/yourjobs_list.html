@@ -76,14 +76,14 @@
             {% csrf_token %}
             <input value={{ submittedjob.id }} name="other_job_id" type="hidden">
             <input type="hidden" name="actionType" value="Delete">
-              <button value="delete" type="submit" class="submit">delete</button>
+              <button value="delete" type="submit" class="delete_button">delete</button>
         </form>  
         <br/>
         <form action="{% url 'ijosephapp:yourjob_edit_form' submittedjob.id %}" method="GET">
             {% csrf_token %}
             <input value={{ submittedjob.id }} name="edit_job_id" type="hidden">
             <input type="hidden" name="actionType" value="Edit">
-            <button value="edit" type="submit" class="submit">edit</button>
+            <button value="edit" type="submit" class="edit_button">edit</button>
         </form> 
       <br/>
       <br/>
