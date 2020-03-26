@@ -8,7 +8,6 @@ body {
     padding-left: 157px;
     padding-right: 125px;
     font-family: 'Raleway', sans-serif;
-    /* text-align: center; */
 }
 
 label {
@@ -34,8 +33,14 @@ label {
 }
 
 .submit {
-    font-size: 70px;
-    color: #00c18c;
+    font-size: 75px;
+    color: navy;
     font-family: 'Raleway', sans-serif;
-    margin-left: 12px;  
+    text-align: center;
+    border: ridge #7accc8 10px;
+    background-color: #7accc8;
+    padding-left: 3px;
+    padding-right: 3px; 
+    margin-left: -10px;
+    margin-top: 10px; 
 }

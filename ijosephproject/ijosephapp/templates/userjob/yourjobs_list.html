@@ -14,12 +14,13 @@
   <body>
 
   <div class="home">
-    <h1 class="section-title">Your Jobs to Complete</h1>
+    <h1 class="section-title">your jobs to complete</h1>
     <ul class="card-content">
 
     {% if checkedout_job_count == 0 %}
-      <h2>You Don't Have Any Checked Out Jobs</h2>
+      <h2>oh no! it looks like you don't have any checked out jobs</h2>
       <a class="become-a-helper-BTN" href="{% url 'ijosephapp:jobs' %}">become a helper</a>
+      <br/>
     {% endif %}
     {%for selectedjob in checkedout_jobs%}
       {% comment %} and for each job where isCompleted == False {% endcomment %}
@@ -50,10 +51,11 @@
     {% endfor %}
     </ul>
     <br />
-   <h1 class="section-title">Your Submitted Jobs</h1>
+   <h1 class="section-title">your submitted jobs</h1>
     {% comment %} iterates over the array of jobs a user has created {% endcomment %}
     <ul class="card-content">
-
+    <br/>
+    <br/>
     {% if submitted_job_count == 0 %}
       <h2>You Don't Have Any Submitted Jobs</h2>
       <a class="become-a-helper-BTN" href="{% url 'ijosephapp:job_form' %}">apply for help</a>
@@ -62,31 +64,32 @@
     {%for submittedjob in yoursubmittedjobs %}
         <li>
         {% comment %} prints the title of the job {% endcomment %}
-          <h2> {{ submittedjob.title}} </h2>
+          <a id="submitted_job_title"> {{ submittedjob.title}} </a>
           {% comment %} and prints a string showing the user whether, or not their job has been completed {% endcomment %}
       {% if submittedjob.isCompleted == False  %}
-          <h3> This job has not been completed. </h3>
+          <h3>this job has not been completed</h3>
           {% else %}
-          <h3> This job is completed. </h3>
+          <h3>yay! this job is completed!</h3>
       {% endif %}
         </li>
-
         <form action="{% url 'ijosephapp:yourjob' %}" method="POST">
             {% csrf_token %}
             <input value={{ submittedjob.id }} name="other_job_id" type="hidden">
             <input type="hidden" name="actionType" value="Delete">
               <button value="delete" type="submit" class="submit">delete</button>
-        </form></br>  
+        </form>  
+        <br/>
         <form action="{% url 'ijosephapp:yourjob_edit_form' submittedjob.id %}" method="GET">
             {% csrf_token %}
             <input value={{ submittedjob.id }} name="edit_job_id" type="hidden">
             <input type="hidden" name="actionType" value="Edit">
-              <button value="edit" type="submit" class="submit">edit</button>
+            <button value="edit" type="submit" class="submit">edit</button>
         </form> 
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       {% endfor %}
-      {% comment %} {% endif %} {% endcomment %}
-      {% comment %} {% endif %} {% endcomment %}
-    </ul>
   </div>
   </body>
 </html>

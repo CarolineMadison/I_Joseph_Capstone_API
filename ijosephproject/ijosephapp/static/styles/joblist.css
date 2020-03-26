@@ -34,16 +34,32 @@ body {
 }
 
 #detailsBTN {
-    font-size: 50px;
+    font-size: 60px;
     color: #00c18c;
     font-family: 'Raleway', sans-serif;
-}
-
-a:hover {
-    color: black;
+    text-align: center;
+    border: ridge wheat 3px;
+    box-shadow: 12px 12px 9px 0px #7accc8;
+    background-color: lightgray;
+    padding: 5px;
 }
 
 ul {
     list-style-type: none;
+}
+
+.no_opportunties_message {
+    text-align: center;
+    color: antiquewhite;
+    font-size: 30px;
+    padding: 75px;
+}
+
+a {
+    color: #00c18c; 
+}
+
+a:hover {
+    color: navy;
 }
     
