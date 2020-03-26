@@ -1,5 +1,5 @@
 .home {
-    padding-top: 265px;
+    padding-top: 240px;
     padding-bottom: 50px;
     padding-left: 125px;
     padding-right: 125px;
@@ -16,6 +16,10 @@
 
 body {
     background-color: black;
+}
+
+#logo {
+    margin-top: -25px
 }
 
 #i-Joseph-main-Logo {

@@ -15,16 +15,16 @@
 
   <div class="home">
     <h1 class="section-title-1">your jobs to complete</h1>
-    <ul class="card-content">
-
+    <br/>
     {% if checkedout_job_count == 0 %}
-      <h2>oh no! it looks like you don't have any checked out jobs</h2>
+      <h2>oh no! it looks like you don't have any checked out jobs!</h2>
       <a class="become-a-helper-BTN" href="{% url 'ijosephapp:jobs' %}">become a helper</a>
       <br/>
     {% endif %}
     {%for selectedjob in checkedout_jobs%}
       {% comment %} and for each job where isCompleted == False {% endcomment %}
       {% if selectedjob.isCompleted == False %}
+    <ul class="card-content">
         {% comment %} prints the title and the description for that job {% endcomment %}
         <li>
           <h2 id="selected_job_title"> {{ selectedjob.title}} </h2>
@@ -46,22 +46,25 @@
           <input value={{ selectedjob.id }} name="other_job_id" type="hidden">
           <input value="Deselect" name="actionType" type="hidden">
             <button value="Deselect" type="submit" class="submit_deselect">deselect</button>
-      </form></br>
+      </form>
+      </br>
+      </br>
+      </br>
+    </ul>
       {% endif %}
     {% endfor %}
-    </ul>
     <br />
    <h1 class="section-title-2">your submitted jobs</h1>
     {% comment %} iterates over the array of jobs a user has created {% endcomment %}
-    <ul class="card-content">
     <br/>
     <br/>
     {% if submitted_job_count == 0 %}
-      <h2>You Don't Have Any Submitted Jobs</h2>
+      <h2>it looks like you don't have any submitted jobs at this time</h2>
       <a class="become-a-helper-BTN" href="{% url 'ijosephapp:job_form' %}">apply for help</a>
     {% endif %}
 
     {%for submittedjob in yoursubmittedjobs %}
+    <ul class="card-content">
         <li>
         {% comment %} prints the title of the job {% endcomment %}
           <h2 id="submitted_job_title"> {{ submittedjob.title}} </h2>
@@ -88,7 +91,8 @@
       <br/>
       <br/>
       <br/>
-      <br/>
+    </ul>
+    <br/>
       {% endfor %}
   </div>
   </body>

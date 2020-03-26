@@ -16,7 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    box-shadow: 15px 15px 0px 0px #00c18c;
+    box-shadow: 15px 15px 0px 0px #7accc8;
     position:relative; 
     color: navy;
     font-size: 30px;
@@ -37,12 +37,15 @@ body {
     margin-top: 70px;
     color: antiquewhite;
     text-align: center;
+    margin-bottom: -10px;
 }
 
-/* h1 {
+h2 {
+    margin-top: -10px;
+    margin-bottom: 100px;
     color: antiquewhite;
     text-align: center;
-} */
+}
 
 .delete_button {
     font-size: 60px;
@@ -55,6 +58,7 @@ body {
     padding-right: 110px;
     padding-top: 10px;
     padding-bottom: 10px; 
+    margin-top: 30px;
 }
 
 .edit_button {
@@ -80,7 +84,8 @@ body {
     padding-left: 14px;
     padding-right: 14px;
     padding-top: 10px;
-    padding-bottom: 10px;  
+    padding-bottom: 10px; 
+    margin-bottom: 10px; 
 }
 
 .submit_mark_complete {
@@ -133,12 +138,14 @@ a:visited {
     font-size: 70px;
     color: navy;
     text-align: center;
+    margin-top: 50px;
 }
 
 #selected_job_title {
     font-size: 70px;
     color: navy;
     text-align: center;
+    margin-top: 20px;
 }
 
 h3 {
