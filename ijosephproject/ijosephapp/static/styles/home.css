@@ -1,5 +1,5 @@
 .home {
-    padding-top: 240px;
+    padding-top: 285px;
     padding-bottom: 50px;
     padding-left: 125px;
     padding-right: 125px;
@@ -24,61 +24,61 @@ body {
     margin-left: -55px;
 }
 
-.become-a-helper-BTN {
-    font-size: 60px;
+.become-a-helper-BTN-1 {
+    font-size: 70px;
     color: navy;
     font-family: 'Raleway', sans-serif;
     text-align: center;
-    border: ridge #7accc8 10px;
-    background-color: #7accc8;
-    padding-left: 3px;
-    padding-right: 3px; 
-    margin-left: -10px;
-    margin-top: 10px; 
+    border: ridge antiquewhite 10px;
+    background-color: antiquewhite; 
+    margin-top: 10px;
 }
 
-.ask-for-help-BTN {
-    font-size: 60px;
+.ask-for-help-BTN-1 {
+    font-size: 70px;
     color: navy;
     font-family: 'Raleway', sans-serif;
     text-align: center;
-    border: ridge #7accc8 10px;
-    background-color: #7accc8;
-    padding-left: 3px;
-    padding-right: 3px; 
-    margin-left: -10px;
-    margin-top: 10px; 
+    border: ridge antiquewhite 10px;
+    background-color: antiquewhite; 
 }
 
 
 .sign-in-BTN {
 
-    font-size: 60px;
-    color: navy;
+    font-size: 70px;
+    color: antiquewhite;
     font-family: 'Raleway', sans-serif;
     text-align: center;
-    border: ridge #7accc8 10px;
-    background-color: #7accc8;
-    padding-left: 3px;
-    padding-right: 3px; 
-    margin-left: -10px;
-    margin-top: 10px; 
-
+    border: ridge #00c18c 20px;
+    background-color: #00c18c;
+    padding-left: 162px;
+    padding-right: 162px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .register-BTN {
-    font-size: 60px;
-    color: navy;
+    font-size: 70px;
+    color: antiquewhite;
     font-family: 'Raleway', sans-serif;
     text-align: center;
-    border: ridge #7accc8 10px;
-    background-color: #7accc8;
-    padding-left: 3px;
-    padding-right: 3px; 
-    margin-left: -10px;
-    margin-top: 10px; 
+    border: ridge #00c18c 20px;
+    background-color: #00c18c;
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 a:hover {
     color: navy;
+}
+
+.ask-for-help-BTN-1:visited {
+    color: navy;
+}
+
+button {
+    width: 50%;
 }

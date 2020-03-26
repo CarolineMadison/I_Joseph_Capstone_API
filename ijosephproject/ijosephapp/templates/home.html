@@ -33,18 +33,24 @@
         {% if user.is_authenticated %}
             </br>
             <div>
-                <a class="become-a-helper-BTN" href="{% url 'ijosephapp:jobs' %}">become a helper</a>
+                <a class="become-a-helper-BTN-1" href="{% url 'ijosephapp:jobs' %}">become a helper</a>
             </div>
             </br>
+            </br>
+            </br>
             <div>
-                <a class="ask-for-help-BTN" href="{% url 'ijosephapp:job_form' %}">apply for help</a>
+                <a class="ask-for-help-BTN-1" href="{% url 'ijosephapp:job_form' %}">apply for help</a>
             </div>
             </br>
             {% else %}
             </br>
+            </br>
             <div>
                 <a class="register-BTN" href="{% url 'ijosephapp:register' %}">register</a>
             </div>
+            </br>
+            </br>
+            </br>
             </br>
             <div>
                 <a class="sign-in-BTN" href="{% url 'ijosephapp:login' %}">login</a>
