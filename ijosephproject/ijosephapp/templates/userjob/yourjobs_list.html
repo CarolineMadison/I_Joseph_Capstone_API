@@ -29,6 +29,7 @@
         <li>
           <h2 id="selected_job_title"> {{ selectedjob.title}} </h2>
           <h3> {{ selectedjob.description}} </h3>
+          </br>
         </li></br>
       {% comment %} handles changing the boolean in the job table from isCompleted == False to isCompleted == True {% endcomment %}
       <form action="{% url 'ijosephapp:yourjob' %}" method="POST">
@@ -68,11 +69,21 @@
         <li>
         {% comment %} prints the title of the job {% endcomment %}
           <h2 id="submitted_job_title"> {{ submittedjob.title}} </h2>
-          {% comment %} and prints a string showing the user whether, or not their job has been completed {% endcomment %}
+          <label id="location_label">location:</label>
+          <br/>
+          <br/>
+          <h2 id="submitted_job_location"> {{ submittedjob.location }} </h2>
+          <label>details and contact information:</label>
+          </br>
+          </br>
+          <h2 id="submitted_job_description"> {{ submittedjob.description }} </h2>
+      {% comment %} and prints a string showing the user whether, or not their job has been completed {% endcomment %}
       {% if submittedjob.isCompleted == False  %}
           <h3>this job has not been completed</h3>
+          <br/>
           {% else %}
           <h3>yay! this job is completed!</h3>
+          <br/>
       {% endif %}
         </li>
         <form action="{% url 'ijosephapp:yourjob' %}" method="POST">

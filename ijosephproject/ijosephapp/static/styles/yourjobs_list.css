@@ -141,6 +141,20 @@ a:visited {
     margin-top: 50px;
 }
 
+#submitted_job_location {
+    color: navy;
+}
+
+#submitted_job_description {
+    color: navy;
+}
+
+label {
+    color: #00c18c;
+    font-weight: bold;
+    font-size: 40px;
+}
+
 #selected_job_title {
     font-size: 70px;
     color: navy;
