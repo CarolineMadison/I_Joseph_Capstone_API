@@ -4,12 +4,12 @@ Steps to get I, Joseph started:
 
 1. Clone the repo and cd into it
 
-2. Create your OSX virtual environment in Terminal:
+2. To Create your OSX virtual environment in Terminal:
 
       python -m venv ijosephENV
       source ./ijosephENV/bin/activate
 
-   OR Create your Windows virtual environment in Command Line:
+3. To Create your Windows virtual environment in Command Line:
 
       python -m venv ijosephENV
       source ./ijosephENV/Scripts/activate
