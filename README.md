@@ -1,4 +1,4 @@
-Welcome to I, Joseph, A Community of Helpers
+Welcome to I, Joseph! 
 
 Steps to get I, Joseph started:
 
