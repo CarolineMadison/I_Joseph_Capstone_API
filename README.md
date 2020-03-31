@@ -6,14 +6,13 @@ Steps to get I, Joseph started:
 
 2. Create your OSX virtual environment in Terminal:
 
-  python -m venv workforceenv
-  source ./workforceenv/bin/activate
+      python -m venv ijosephENV
+      source ./ijosephENV/bin/activate
 
-  OR Create your Windows virtual environment in Command Line:
+   OR Create your Windows virtual environment in Command Line:
 
-  python -m venv workforceenv
-  source ./workforceenv/Scripts/activate
-  Install the app's dependencies:
+      python -m venv ijosephENV
+      source ./ijosephENV/Scripts/activate
 
 3. pip install -r requirements.txt
 
