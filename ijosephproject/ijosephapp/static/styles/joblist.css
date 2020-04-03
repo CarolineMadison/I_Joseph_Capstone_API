@@ -30,20 +30,42 @@ body {
     margin: 1em;
     font-size: 2em;
     font-family: 'Raleway', sans-serif;
-    color: #20355a;
+    color: navy;
 }
 
 #detailsBTN {
-    font-size: 50px;
-    color: #00c18c;
+    font-size: 60px;
+    color: antiquewhite;
     font-family: 'Raleway', sans-serif;
-}
-
-a:hover {
-    color: black;
+    text-align: center;
+    border: ridge #00c18c 20px;
+    background-color: #00c18c;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 ul {
     list-style-type: none;
+}
+
+.no_opportunties_message {
+    text-align: center;
+    color: antiquewhite;
+    font-size: 30px;
+    padding: 75px;
+}
+
+a {
+    color: #00c18c; 
+}
+
+a:hover {
+    color: navy;
+}
+
+a:visited {
+    color: antiquewhite;
 }
     

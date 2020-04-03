@@ -16,7 +16,7 @@
 <body>
   <div class="home">
     <section class="card-content">
-        <h1 style="text-align: center">{{ job.title }}</h1>
+        <h1 class="job_title">{{ job.title }}</h1>
         <hr/>
         <label>location:</label>
         <h3>{{ job.location }}</h3>
@@ -25,11 +25,12 @@
         <label>category of work:</label>
         <h3>{{ job.category }}</h3>
     </section>
+    <br/> 
     <form action="{% url 'ijosephapp:yourjob' %}" method="post">
       {% csrf_token %}
         <input value={{ job.id }} name="job_id" type="hidden">
         <input value="SelectOpportunity" name="actionType" type="hidden"></br></br>
-        <button type="submit" value="SelectOpportunity" class="submit">select opportunity</button>
+        <button type="submit" value="SelectOpportunity" class="submit_opportunity">select opportunity</button>
     </form>
   </div>
 </body>

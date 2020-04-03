@@ -14,20 +14,22 @@
   <body>
 
   <div class="home">
-    <h1 class="section-title">Your Jobs to Complete</h1>
-    <ul class="card-content">
-
+    <h1 class="section-title-1">your jobs to complete</h1>
+    <br/>
     {% if checkedout_job_count == 0 %}
-      <h2>You Don't Have Any Checked Out Jobs</h2>
+      <h2>oh no! it looks like you don't have any checked out jobs!</h2>
       <a class="become-a-helper-BTN" href="{% url 'ijosephapp:jobs' %}">become a helper</a>
+      <br/>
     {% endif %}
     {%for selectedjob in checkedout_jobs%}
       {% comment %} and for each job where isCompleted == False {% endcomment %}
       {% if selectedjob.isCompleted == False %}
+    <ul class="card-content">
         {% comment %} prints the title and the description for that job {% endcomment %}
         <li>
-          <h2> {{ selectedjob.title}} </h2>
-          <p> {{ selectedjob.description}} </p>
+          <h2 id="selected_job_title"> {{ selectedjob.title}} </h2>
+          <h3> {{ selectedjob.description}} </h3>
+          </br>
         </li></br>
       {% comment %} handles changing the boolean in the job table from isCompleted == False to isCompleted == True {% endcomment %}
       <form action="{% url 'ijosephapp:yourjob' %}" method="POST">
@@ -36,7 +38,7 @@
           <input value={{ selectedjob.id }} name="job_id" type="hidden">
           {% comment %} and sets an action type to let python know how to handle it {% endcomment %}
           <input value="MarkComplete" name="actionType" type="hidden">
-            <button value="MarkComplete" type="submit" class="submit">mark complete</button>
+            <button value="MarkComplete" type="submit" class="submit_mark_complete">mark complete</button>
       </form></br>
       {% comment %} handles deleting a userjob relationship from the userjob table {% endcomment %}
       <form action="{% url 'ijosephapp:yourjob' %}" method="POST">
@@ -44,51 +46,69 @@
           {% comment %} takes the id of the checked out job and puts it into the form data {% endcomment %}
           <input value={{ selectedjob.id }} name="other_job_id" type="hidden">
           <input value="Deselect" name="actionType" type="hidden">
-            <button value="Deselect" type="submit" class="submit">deselect</button>
-      </form></br>
+            <button value="Deselect" type="submit" class="submit_deselect">deselect</button>
+      </form>
+      </br>
+      </br>
+      </br>
+    </ul>
       {% endif %}
     {% endfor %}
-    </ul>
     <br />
-   <h1 class="section-title">Your Submitted Jobs</h1>
+   <h1 class="section-title-2">your submitted jobs</h1>
     {% comment %} iterates over the array of jobs a user has created {% endcomment %}
-    <ul class="card-content">
-
+    <br/>
+    <br/>
     {% if submitted_job_count == 0 %}
-      <h2>You Don't Have Any Submitted Jobs</h2>
+      <h2>it looks like you don't have any submitted jobs at this time</h2>
       <a class="become-a-helper-BTN" href="{% url 'ijosephapp:job_form' %}">apply for help</a>
     {% endif %}
 
     {%for submittedjob in yoursubmittedjobs %}
+    <ul class="card-content">
         <li>
-        {% comment %} prints the title of the job {% endcomment %}
-          <h2> {{ submittedjob.title}} </h2>
-          {% comment %} and prints a string showing the user whether, or not their job has been completed {% endcomment %}
+        {% comment %} prints the title of the job {% endcomment %} 
+          <h2 id="submitted_job_title"> {{ submittedjob.title}} </h2>
+          <label id="location_label">location:</label>
+          <br/>
+          <br/>
+          <h2 id="submitted_job_location"> {{ submittedjob.location }} </h2>
+          <label>details and contact information:</label>
+          </br>
+          </br>
+          <h2 id="submitted_job_description"> {{ submittedjob.description }} </h2>
+      {% comment %} and prints a string showing the user whether, or not their job has been completed {% endcomment %}
       {% if submittedjob.isCompleted == False  %}
-          <h3> This job has not been completed. </h3>
+          <h3>this job has not been completed</h3>
+          <br/>
           {% else %}
-          <h3> This job is completed. </h3>
+          <h3>yay! this job is completed!</h3>
+          <br/>
       {% endif %}
         </li>
-
         <form action="{% url 'ijosephapp:yourjob' %}" method="POST">
             {% csrf_token %}
             <input value={{ submittedjob.id }} name="other_job_id" type="hidden">
             <input type="hidden" name="actionType" value="Delete">
-              <button value="delete" type="submit" class="submit">delete</button>
-        </form></br>  
+              <button value="delete" type="submit" class="delete_button ">delete</button>
+        </form>  
+        <br/>
         <form action="{% url 'ijosephapp:yourjob_edit_form' submittedjob.id %}" method="GET">
             {% csrf_token %}
             <input value={{ submittedjob.id }} name="edit_job_id" type="hidden">
             <input type="hidden" name="actionType" value="Edit">
-              <button value="edit" type="submit" class="submit">edit</button>
+            <button value="edit" type="submit" class="edit_button">edit</button>
         </form> 
-      {% endfor %}
-      {% comment %} {% endif %} {% endcomment %}
-      {% comment %} {% endif %} {% endcomment %}
+      <br/>
+      <br/>
+      <br/>
     </ul>
+    <br/>
+      {% endfor %}
   </div>
   </body>
 </html>
 
 {% endblock %}
+
+{% comment %} comment {% endcomment %}

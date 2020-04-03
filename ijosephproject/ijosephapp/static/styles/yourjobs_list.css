@@ -3,19 +3,12 @@ body {
 }
 
 .home {
-    padding-top: 150px;
+    padding-top: 1px;
     padding-bottom: 50px;
     padding-left: 130px;
     padding-right: 130px;
     font-family: 'Raleway', sans-serif;
     text-align: center;
-}
-
-.jobs {
-    margin: 1em;
-    font-size: 2em;
-    font-family: 'Raleway', sans-serif;
-    color: #20355a;
 }
 
 .card-content {
@@ -27,31 +20,98 @@ body {
     position:relative; 
     color: navy;
     font-size: 30px;
-    padding: 70px 70px 70px 70px;
+    padding: 40px 70px 40px 70px;
 }
 
-.section-title {
-    font-size: 60px;
+.section-title-1 {
+    font-size: 75px;
     font-family: 'Raleway', sans-serif;
-}
-
-h1 {
+    margin-top: 70px;
     color: antiquewhite;
     text-align: center;
 }
 
-.submit {
-    font-size: 40px;
-    color: #00c18c;
+.section-title-2 {
+    font-size: 75px;
     font-family: 'Raleway', sans-serif;
+    margin-top: 70px;
+    color: antiquewhite;
+    text-align: center;
+    margin-bottom: -10px;
+}
+
+h2 {
+    margin-top: -10px;
+    margin-bottom: 100px;
+    color: antiquewhite;
     text-align: center;
 }
 
-.become-a-helper-BTN {
-    font-size: 40px;
-    color: #00c18c;
+.delete_button {
+    font-size: 60px;
+    color: antiquewhite;
     font-family: 'Raleway', sans-serif;
     text-align: center;
+    border: ridge #00c18c 20px;
+    background-color: #00c18c;
+    padding-left: 110px;
+    padding-right: 110px;
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    margin-top: 30px;
+}
+
+.edit_button {
+    font-size: 60px;
+    color: antiquewhite;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    border: ridge #00c18c 20px;
+    background-color: #00c18c;
+    padding-left: 145px;
+    padding-right: 145px;
+    padding-top: 10px;
+    padding-bottom: 10px; 
+}
+
+.become-a-helper-BTN {
+    font-size: 60px;
+    color: antiquewhite;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    border: ridge #00c18c 20px;
+    background-color: #00c18c;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    margin-bottom: 10px; 
+}
+
+.submit_mark_complete {
+    font-size: 60px;
+    color: antiquewhite;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    border: ridge #00c18c 20px;
+    background-color: #00c18c;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.submit_deselect {
+    font-size: 60px;
+    color: antiquewhite;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    border: ridge #00c18c 20px;
+    background-color: #00c18c;
+    padding-left: 105px;
+    padding-right: 105px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 ul {
@@ -60,4 +120,50 @@ ul {
 
 p {
     text-align: left;
+}
+
+a:hover {
+    color: antiquewhite;
+}
+
+button:hover {
+     color: antiquewhite;
+}
+
+a:visited {
+    color: antiquewhite;
+}
+
+#submitted_job_title {
+    font-size: 70px;
+    color: navy;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#submitted_job_location {
+    color: navy;
+}
+
+#submitted_job_description {
+    color: navy;
+}
+
+label {
+    color: #00c18c;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+#selected_job_title {
+    font-size: 70px;
+    color: navy;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h3 {
+    color: black;
+    font-weight: bolder;
+    font-size: 40px;
 }

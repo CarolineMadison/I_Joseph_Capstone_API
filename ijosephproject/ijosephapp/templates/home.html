@@ -8,7 +8,9 @@
     <meta charset="utf-8">
     <title>iJoseph</title>
     <link rel="stylesheet" href="{% static 'styles/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/base.css' %}" />
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
     
     {% block css %}
     {% endblock %}
@@ -20,11 +22,10 @@
         <img id="logo" src="{% static 'images/ijosephcircleLogo.png' %}" alt="iJoseph Logo">
         </br></br>
     {% else %}
-        {% comment %} <h1 class="welcome">Welcome to, </h1> {% endcomment %}
         <hr />
         </br>
         <img id="i-Joseph-main-Logo"src="{% static 'images/i-joseph-large-logo.png' %}" alt="iJoseph Logo">
-        <h1 class="welcome">A Community of Helpers</h1>
+        <h1 class="welcome">a community of helpers</h1>
         </br>
         </br>
         <hr />
@@ -33,19 +34,32 @@
     {% endif %} 
         {% if user.is_authenticated %}
             </br>
-            <div>
-                <a class="become-a-helper-BTN" href="{% url 'ijosephapp:jobs' %}">become a helper</a>
-            </div>
             </br>
             <div>
-                <a class="ask-for-help-BTN" href="{% url 'ijosephapp:job_form' %}">apply for help</a>
+                <a class="become-a-helper-BTN-1" href="{% url 'ijosephapp:jobs' %}">become a helper</a>
+            </div>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            <div>
+                <a class="ask-for-help-BTN-1" href="{% url 'ijosephapp:job_form' %}">apply for help</a>
             </div>
             </br>
             {% else %}
             </br>
+            </br>
+            </br>
+            </br>
             <div>
                 <a class="register-BTN" href="{% url 'ijosephapp:register' %}">register</a>
             </div>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
             </br>
             <div>
                 <a class="sign-in-BTN" href="{% url 'ijosephapp:login' %}">login</a>

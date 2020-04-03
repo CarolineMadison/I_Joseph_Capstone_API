@@ -27,7 +27,7 @@
       
           <input id="description" type="text" name="description" placeholder="description"></br>
     
-          <label for="category">Category: </label>
+          <label for="category">category: </label>
           <select id="category" type="text" name="category" style = "font-family:georgia,garamond,serif;font-size:30px;font-style:italic;">
                     <option>select one</option>
                 {% for category in all_categories %}
@@ -37,6 +37,7 @@
       
         <input type="hidden" name="actionType" value="NewJob">
         <button type="submit" class="submit-BTN" value="Submit">submit</button>
+        
       {% else %}
       
           

@@ -1,3 +1,5 @@
+
+
 .home {
     padding-top: 240px;
     padding-bottom: 50px;
@@ -18,49 +20,81 @@ body {
     background-color: black;
 }
 
+#logo {
+    margin-top: -25px
+}
+
 #i-Joseph-main-Logo {
     /* align-items: center; */
     width: 120%;
     margin-left: -55px;
 }
 
-.become-a-helper-BTN {
-    justify-content: center;
-    color: #00c18c;
-    font-size: 80px;
-    padding: 10px 10px 10px 10px;
+.become-a-helper-BTN-1 {
+    font-size: 70px;
+    color: antiquewhite;
     font-family: 'Raleway', sans-serif;
+    text-align: center;
+    border: ridge #00c18c 20px;
+    background-color: #00c18c;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.ask-for-help-BTN {
-    margin-top: 20px;
-    justify-content: center;
-    color: #00c18c;
-    font-size: 80px;
-    padding: 10px 10px 10px 10px;
+.ask-for-help-BTN-1 {
+    font-size: 70px;
+    color: antiquewhite;
     font-family: 'Raleway', sans-serif;
+    text-align: center;
+    border: ridge #00c18c 20px;
+    background-color: #00c18c;
+    padding-left: 65px;
+    padding-right: 65px;
+    padding-top: 10px;
+    padding-bottom: 10px; 
 }
 
 
 .sign-in-BTN {
 
-    margin-top: 20px;
-    justify-content: center;
-    color: #00c18c;
-    font-size: 85px;
-    padding: 10px 10px 10px 10px;
+    font-size: 70px;
+    color: antiquewhite;
     font-family: 'Raleway', sans-serif;
-
+    text-align: center;
+    border: ridge #00c18c 20px;
+    background-color: #00c18c;
+    padding-left: 162px;
+    padding-right: 162px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .register-BTN {
-    justify-content: center;
-    color: #00c18c;
-    font-size: 85px;
-    padding: 10px 10px 10px 10px;
+    font-size: 70px;
+    color: antiquewhite;
     font-family: 'Raleway', sans-serif;
+    text-align: center;
+    border: ridge #00c18c 20px;
+    background-color: #00c18c;
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-a:hover {
-    color: black;
+a:visited {
+    color: antiquewhite;
+}
+
+.become-a-helper-BTN-1:visited {
+    color: antiquewhite;
+}
+.ask-for-help-BTN-1:visited {
+    color: antiquewhite
+}
+
+button {
+    width: 50%;
 }

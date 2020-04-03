@@ -6,23 +6,47 @@
   <head>
     <meta charset="utf-8">
     <title>iJoseph</title>
+    <style>       
+      hr{
+        height: 2px;
+        width: 1%;
+        background-color: #7accc8;
+        border: solid black;
+      }
+    </style>
     {% block css %}
       <link rel="stylesheet" href="{% static 'styles/joblist.css' %}" />
       <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     {% endblock %}
   </head>
   <body>
-      <ul>
-      {% for job in notcheckedout_jobs %}
-        <div class="card-content">
-            <li class="job">
-            <img class="smalllogo"src="{% static 'images/ijosephCircleLogo.png' %}" alt="iJoseph Small Logo">
-            <h1 class="job-title"> {{ job.title }} </h1>
-            <a id="detailsBTN" href="{% url 'ijosephapp:job' job.id %}">more information</a>
-          </li>
+      user = request.user.id  
+      {% if notcheckedout_jobs_count == 0 %}
+        <div class="no_opportunties_message">
+        <hr>
+          <h2>oh no!</h2>
+          <h2>it looks like there aren't any opportunities at this time</h2>
+          <h2>check back soon!</h2>
+        <hr>
         </div>
-      {% endfor %}
-      </ul>
+        {% else %}
+          {% for job in notcheckedout_jobs %}
+              <ul>
+                <div class="card-content">
+                <li class="job">
+                  <img class="smalllogo"src="{% static 'images/ijosephCircleLogo.png' %}" alt="iJoseph Small Logo">
+                  <h1 class="job-title"> {{ job.title }} </h1>
+                  <br/>
+                  <a id="detailsBTN" href="{% url 'ijosephapp:job' job.id %}">more information</a>
+                </li>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                </div>
+              </ul>  
+          {% endfor %}
+      {% endif %}
   </body>
 </html>
 

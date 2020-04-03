@@ -24,20 +24,18 @@
     max-width: 75%;
 }
 
-a:active {
-    color: #00c18c;
+a:hover {
+    color: navy;
 }
-a:visited {
-    color: #00c18c;
+
+button:hover {
+     color: navy;
 }
 
 a {
     text-decoration: none;
 }
 
-a:hover {
-    color: black;
-}
 
 body {
     padding: 10px;
